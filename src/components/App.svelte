@@ -1,13 +1,239 @@
 <script>
+  import { onMount } from 'svelte';
+
+  import donutWave from '../lib/donut-wave.png';
+  import donutWaveLeft from '../lib/donut-wave-left.png';
+  import donutHypeOpen from '../lib/donut-hype-eyes-open.png';
+  import donutHypeClosed from '../lib/donut-hype-eyes-closed.png';
+  import donutThinkLeft from '../lib/donut-think-left.png';
+  import donutThinkRight from '../lib/donut-think-right.png';
+
+  import quadraticDonut from '../lib/quadratic-donut.png';
+  import exponentialDonut from '../lib/exponential-donut.png';
+  import graphDonut from '../lib/graph-donut.png';
+  import factorialDonut from '../lib/factorial-donut.png';
+  import linearDonut from '../lib/linear-donut.png';
+  import logDonut from '../lib/log-donut.png';
+  import nlognDonut from '../lib/nlogn-donut.png';
+  import constantDonut from '../lib/constant-donut.png';
+    import { index } from 'd3';
+
+  let donuts = [
+    { src: donutWave, top: 100, left: 35, width: 150 },
+    { src: donutThinkRight, top: 200, left: 35, width: 150 },
+    { src: donutHypeClosed, top: 300, left: 35, width: 150 },
+    { src: graphDonut, top: 400, left: 35, width: 150 },
+    { src: constantDonut, top: 500, left: 35, width: 150 },
+    { src: logDonut, top: 600, left: 35, width: 150 },
+    { src: linearDonut, top: 700, left: 35, width: 150 },
+    { src: nlognDonut, top: 800, left: 35, width: 150 },
+    { src: quadraticDonut, top: 900, left: 35, width: 150 },
+    { src: exponentialDonut, top: 1000, left: 35, width: 150 },
+    { src: factorialDonut, top: 1100, left: 35, width: 150 },
+    { src: donutThinkRight, top: 1200, left: 35, width: 150 },
+    { src: donutWaveLeft, top: 1300, left: 35, width: 150 }
+  ];
+
+  function handleDonutHover(index) {
+    donuts[index].hovered = true;
+  }
+
+  function handleDonutOut(index) {
+    donuts[index].hovered = false;
+  }
+
+  function handleDonutClick(index) {
+    donuts[index].clicked = true;
+  }
+  let boxes;
+  let boxAppears = [false, false, false, false, false, false, false, false, false, false, false, false, false];
+
+  onMount(() => {
+    // Write your code here
+    boxes = document.querySelectorAll('.box_container');
+    window.addEventListener('scroll', checkBoxes);
+    window.addEventListener('scroll', updateProgress);
+  });
+
+  function checkBoxes() {
+    const triggerBottom = window.innerHeight / 5 * 4;
+
+    boxes.forEach((box, index) => {
+      const boxTop = box.getBoundingClientRect().top;
+      const boxBottom = box.getBoundingClientRect().top 
+      + box.getBoundingClientRect().height;
+      console.log(boxTop);
+      if (boxTop < triggerBottom && boxBottom > triggerBottom/2) {
+        boxAppears[index] = true;
+      } else {
+        boxAppears[index] = false;
+      }
+    });
+  }
+
+  function updateProgress() {
+    const pixels = window.scrollY;
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let percentage = (pixels / totalHeight) * 100;
+    percentage = Math.min(percentage, 98.5);
+    document.querySelector('.progress-bar').style.width = `${percentage}%`;
+  }
   // Write your JS here, or import other files
 </script>
+<header>
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+</header>
 
 <main>
-  <h1>Svelte template</h1>
+  <div>
+    {#each donuts as { src, top, left, width, hovered, clicked }, index}
+      {#if index === 0}
+          <!-- <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            Welcome! My name is Big O. Follow the path and click my dopplegangers to learn about Big O!
+          </div> -->
+        {/if}
+      {#if hovered}
+        {#if index === 1}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            What is Big O Notation? Why is it important?
+          </div>
+        {/if}
+        {#if index === 2}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;;`}>
+            Let's learn how to calculate Big O!
+          </div>  
+        {/if}
+        {#if index === 3}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            Useful Visualizations!
+          </div>
+        {/if}
+        {#if index === 4}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            I am in a <i>constant</i> state of sugar-high!
+          </div>
+        {/if}
+        {#if index === 5}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            Just like the rings on a <i>log</i>, there are O's everywhere!
+          </div>
+        {/if}
+        {#if index === 6}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            Let me be <i>straight</i> with you... pink is the best color!
+          </div>
+        {/if}
+        {#if index === 7}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            I'm not sure of a good pun... anyways <i>quasilinear</i> time!
+          </div>
+        {/if}
+        {#if index === 8}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            Don't be dramatic. It's time for <i>quadratics</i>!
+          </div>
+        {/if}
+        {#if index === 9}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            You are improving at an <i>exponential</i> rate!
+          </div>
+        {/if}
+        {#if index === 10}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            Let's face the <i>facts</i>. This is bananas!
+          </div>
+        {/if}
+        {#if index === 11}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            Let's get down to business... to defeat the <i>practice problems</i>!
+          </div>
+        {/if}
+        {#if index === 12}
+          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
+            Our Sources
+          </div>
+        {/if}
+        <!-- Add more conditions for other donuts if needed -->
+      {/if}
+      <div id={`donut-${index}`} class="donut-container" style={`top: ${top}px; left: ${left}px;`}>
+        <img class="donut-img"
+          src={src}
+          alt="Donut"
+          style={` width: ${width}px`}
+          on:mouseover={() => handleDonutHover(index)}
+          on:mouseout={() => handleDonutOut(index)}
+          on:click={() => handleDonutClick(index)}/>
+        <div class="box_container" class:appear={boxAppears[index]}>
 
-  <p>Write your HTML here</p>
+        </div>
+      </div>
+    {/each}
+  </div>
+  
 </main>
 
 <style>
   /* Write your CSS here */
+  header{
+    position: fixed;
+    background-color: #f9f9f9;
+    width: 1400px;
+    height: 50px;
+    padding-inline: 10px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+  }
+  .progress-bar {
+    position: inherit;
+    top: 10px;
+    left: 5;
+    width: 1400px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+  }
+  .progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #b1e8ea;
+    overflow: hidden;
+  }
+
+  .donut-container {
+    position: relative;
+    display: flex;
+    height: 500px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .speech-bubble {
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  .box_container {
+    position: relative;
+    top: 0;
+    left: 50;
+    width: 400px;
+    height: 550px;
+    background-color: green ;
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
+
+  .box_container.appear {
+    opacity: 1;
+    transform: opacity 500mx ease-out;
+  }
 </style>
