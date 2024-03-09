@@ -70,7 +70,8 @@
     
   <main class="container">
       <h1>What is Big O Notation?</h1>
-      <p style="text-align: left;">Big O notation is a fundamental tool used to analyze the cost of an algorithm. It gives the upper-bound runtime or worst-case complexity of an algorithm. This allows one to classify algorithms depending on their run time or space requirements. Big O notation was invented by German mathematicians Paul Bachmann, Edmund Landau, and others. It is also called Bachmann-Landau notation or asymptotic notation. The letter <Katex>n</Katex> represents the input size (this can be the length of a list of a given integer). The letter <Katex>O</Katex> was chosen by Bachnmann to stand for Ordnung, which means the order of approximation.</p>
+      <p style="text-align: left;">Big O notation is a fundamental tool used to analyze the cost of an algorithm. It gives the upper-bound runtime or worst-case complexity of an algorithm. This allows one to classify algorithms depending on their run time or space requirements.</p>
+      <p>Big O notation was invented by German mathematicians Paul Bachmann, Edmund Landau, and others. It is also called Bachmann-Landau notation or asymptotic notation. The letter <Katex>n</Katex> represents the input size (this can be the length of a list of a given integer). The letter <Katex>O</Katex> was chosen by Bachnmann to stand for Ordnung, which means the order of approximation.</p>
       <h2>Here is the formal definition:</h2>
       <p><Katex>f(N) = O(g(N))</Katex> if there exists possible constants <Katex>c</Katex>, <Katex>N_{0}</Katex> such that <Katex>f(N) \leq c * g(N)</Katex> for all <Katex>N \geq N_{0}</Katex>.</p>
       <h2>Why is Big O Notation Important?</h2>
