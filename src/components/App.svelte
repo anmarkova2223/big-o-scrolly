@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import Constant from '../lib/Constant.svelte';
-  // import Exponential from '../lib/Exponential.svelte';
+  import About from '../lib/About.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -146,7 +146,7 @@
         </div>
       {:else if index === 1}
         <div class="box_content">
-          Explanation
+          <About />
         </div>
       {:else if index === 2}
         <div class="box_content">
