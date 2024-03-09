@@ -112,9 +112,30 @@
   <div class="donut-container" style={`top: ${top}px; left: ${left}px;`}>
     <img class="donut" src={src} alt="Donut" style={`width: ${width}px`}/>
     {#if index === 1 || index === 11 || index === 12}
-      <div class="label_short">{label}</div>
+      {#if index === 1}
+        <div class="label_short" style={`left: 30px`}>{label}</div>
+      {:else if index === 11}
+        <div class="label_short" style={`left: 40px`}>{label}</div>
+      {:else}
+        <div class="label_short" style={`left: 44px`}>{label}</div>
+      {/if}
+      <!-- <div class="label_short" style={`left: px`}>{label}</div> -->
     {:else}
-      <div class="label_norm">{label}</div>
+      {#if index === 2 || index === 3}
+        <div class="label_norm" style={`left: 43px`}>{label}</div>
+      {:else if index === 4 || index === 10}
+        <div class="label_norm" style={`left: 63px`}>{label}</div>
+      {:else if index === 5}
+        <div class="label_norm" style={`left: 50px`}>{label}</div>
+        {:else if index === 6}
+        <div class="label_norm" style={`left: 70px`}>{label}</div>
+      {:else if index === 7}
+        <div class="label_norm" style={`left: 55px`}>{label}</div>
+      {:else if index === 8}
+        <div class="label_norm" style={`left: 60px`}>{label}</div>
+        {:else}
+        <div class="label_norm" style={`left: 55px`}>{label}</div>
+    {/if}
     {/if}
     <div class="box_container" class:appear={boxAppears[index]}></div>
   </div>
@@ -159,12 +180,14 @@
   }
 
   .label_norm {
+    position: absolute;
     font-size: 14px;
     text-align: center;
-    margin-top: 150px; /* Adjust the margin as needed */
+    margin-top: 145px; /* Adjust the margin as needed */
   }
 
   .label_short {
+    position: absolute;
     font-size: 14px;
     text-align: center;
     margin-top: 125px; /* Adjust the margin as needed */
