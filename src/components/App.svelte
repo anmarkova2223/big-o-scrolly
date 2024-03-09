@@ -18,23 +18,38 @@
   import constantDonut from '../lib/constant-donut.png';
     import { index } from 'd3';
 
-    import Sidebar from './Sidebar.svelte';
-    let sidebar_show = false;
+  import Sidebar from './Sidebar.svelte';
+  let sidebar_show = false;
+
+  let donutTexts = [
+    "Explanation",
+    "The How",
+    "Graph & Table",
+    "Constant",
+    "Logarithmic",
+    "Linear",
+    "Quasilinear",
+    "Quadratic",
+    "Exponential",
+    "Factorial",
+    "Practice",
+    "Sources"
+  ]
 
   let donuts = [
-    { src: donutWave, top: 100, left: 35, width: 150 },
-    { src: donutThinkRight, top: 200, left: 35, width: 130 },
-    { src: donutHypeClosed, top: 300, left: 35, width: 150 },
-    { src: graphDonut, top: 400, left: 35, width: 180 },
-    { src: constantDonut, top: 500, left: 35, width: 180 },
-    { src: logDonut, top: 600, left: 35, width: 180 },
-    { src: linearDonut, top: 700, left: 35, width: 180 },
-    { src: nlognDonut, top: 800, left: 35, width: 180 },
-    { src: quadraticDonut, top: 900, left: 35, width: 180 },
-    { src: exponentialDonut, top: 1000, left: 35, width: 180 },
-    { src: factorialDonut, top: 1100, left: 35, width: 180 },
-    { src: donutThinkRight, top: 1200, left: 35, width: 130 },
-    { src: donutWaveLeft, top: 1300, left: 35, width: 140 }
+    { src: donutWave, label: "", top: 100, left: 35, width: 150 },
+    { src: donutThinkRight, label: donutTexts[0], top: 200, left: 35, width: 130 },
+    { src: donutHypeClosed, label: donutTexts[1],top: 300, left: 35, width: 150 },
+    { src: graphDonut, label: donutTexts[2],top: 400, left: 35, width: 180 },
+    { src: constantDonut,label: donutTexts[3], top: 500, left: 35, width: 180 },
+    { src: logDonut,label: donutTexts[4], top: 600, left: 35, width: 180 },
+    { src: linearDonut,label: donutTexts[5], top: 700, left: 35, width: 180 },
+    { src: nlognDonut,label: donutTexts[6], top: 800, left: 35, width: 180 },
+    { src: quadraticDonut,label: donutTexts[7], top: 900, left: 35, width: 180 },
+    { src: exponentialDonut,label: donutTexts[8], top: 1000, left: 35, width: 180 },
+    { src: factorialDonut,label: donutTexts[9], top: 1100, left: 35, width: 180 },
+    { src: donutThinkRight,label: donutTexts[10], top: 1200, left: 35, width: 130 },
+    { src: donutWaveLeft,label: donutTexts[11], top: 1300, left: 35, width: 140 }
   ];
 
 
@@ -93,91 +108,17 @@
 <Sidebar bind:show={sidebar_show} />
 
 <main>
-  <div>
-    {#each donuts as { src, top, left, width, hovered, clicked }, index}
-      {#if index === 0}
-          <!-- <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            Welcome! My name is Big O. Follow the path and click my dopplegangers to learn about Big O!
-          </div> -->
-        {/if}
-      {#if hovered}
-        {#if index === 1}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            What is Big O Notation? Why is it important?
-          </div>
-        {/if}
-        {#if index === 2}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;;`}>
-            Let's learn how to calculate Big O!
-          </div>  
-        {/if}
-        {#if index === 3}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            Useful Visualizations!
-          </div>
-        {/if}
-        {#if index === 4}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            I am in a <i>constant</i> state of sugar-high!
-          </div>
-        {/if}
-        {#if index === 5}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            Just like the rings on a <i>log</i>, there are O's everywhere!
-          </div>
-        {/if}
-        {#if index === 6}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            Let me be <i>straight</i> with you... pink is the best color!
-          </div>
-        {/if}
-        {#if index === 7}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            I'm not sure of a good pun... anyways <i>quasilinear</i> time!
-          </div>
-        {/if}
-        {#if index === 8}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            Don't be dramatic. It's time for <i>quadratics</i>!
-          </div>
-        {/if}
-        {#if index === 9}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            You are improving at an <i>exponential</i> rate!
-          </div>
-        {/if}
-        {#if index === 10}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            Let's face the <i>facts</i>. This is bananas!
-          </div>
-        {/if}
-        {#if index === 11}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            Let's get down to business... to defeat the <i>practice problems</i>!
-          </div>
-        {/if}
-        {#if index === 12}
-          <div class="speech-bubble" style={`top: ${top}px; left: ${left}px;`}>
-            Our Sources
-          </div>
-        {/if}
-        <!-- Add more conditions for other donuts if needed -->
-      {/if}
-      <div id={`donut-${index}`} class="donut-container" style={`top: ${top}px; left: ${left}px;`}>
-        <img class="donut-img"
-          src={src}
-          alt="Donut"
-          style={` width: ${width}px`}
-          on:mouseover={() => handleDonutHover(index)}
-          on:mouseout={() => handleDonutOut(index)}
-          on:click={() => handleDonutClick(index)}/>
-        <div class="box_container" class:appear={boxAppears[index]}>
-
-        </div>
-      </div>
-    {/each}
+  {#each donuts as { src, label, top, left, width, hovered, clicked }, index}
+  <div class="donut-container" style={`top: ${top}px; left: ${left}px;`}>
+    <img class="donut" src={src} alt="Donut" style={`width: ${width}px`}/>
+    {#if index === 1 || index === 11 || index === 12}
+      <div class="label_short">{label}</div>
+    {:else}
+      <div class="label_norm">{label}</div>
+    {/if}
+    <div class="box_container" class:appear={boxAppears[index]}></div>
   </div>
-  
+  {/each}
 </main>
 
 <style>
@@ -216,6 +157,19 @@
     align-items: center;
     justify-content: flex-start;
   }
+
+  .label_norm {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 150px; /* Adjust the margin as needed */
+  }
+
+  .label_short {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 125px; /* Adjust the margin as needed */
+  }
+
   .speech-bubble {
     position: absolute;
     background-color: #f9f9f9;
