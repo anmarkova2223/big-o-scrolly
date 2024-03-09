@@ -4,6 +4,7 @@
   import About from '../lib/About.svelte';
   import Tips from '../lib/Tips.svelte';
   import Sources from '../lib/Sources.svelte';
+  import Graph from '../lib/Graph.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -158,7 +159,7 @@
         </div>
       {:else if index === 3}
         <div class="box_content">
-          Graph
+          <Graph />
         </div>
       {:else if index === 4}
         <div class="box_content">
