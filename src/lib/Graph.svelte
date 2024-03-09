@@ -22,29 +22,30 @@
   <style>
     .main-container {
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
       justify-content: center;
-      width: 100vw;
+      /* width: 100vw; */
       height: 100vh;
     }
   
     #big-o-graph {
-      flex: 2;
-      overflow: auto;
+      /* flex: 2; */
       transform: scale(0.9);
+      margin-top: 125px;
+      margin-right: auto;
+      margin-left: auto;
     }
   
     #fun-table-container {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
-      flex: 1;
-      overflow-y: auto;
-      margin-right: 70px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: -100px;
       height: 100%;
-      transform: scale(0.9);
     }
   
     #fun-table {
@@ -53,6 +54,9 @@
   
     .donut-container {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   
     .speech-bubble {
@@ -66,7 +70,7 @@
       transform: translateY(-50%);
     }
   
-    .speech-bubble::before {
+    /* .speech-bubble::before {
       content: '';
       position: absolute;
       top: 150%;
@@ -76,7 +80,7 @@
       border-style: solid;
       border-color: transparent transparent transparent #CCCCCC;
       transform: rotate(90deg);
-    }
+    } */
   
     :global(.katex) {
         font-size: inherit; /* Make KaTeX font size same as the regular text */
@@ -93,16 +97,19 @@
     <div id="big-o-graph">
         <!-- Your big-o-graph component here -->
     </div>
-  
     <div id="fun-table-container" class="donut-container">
         <div id="fun-table">
             <!-- Your table component here -->
-            <img src={donutHype} alt="Donut Image" style="width: 200px;">
-            <div class="speech-bubble" style={`top: 10%; left: 23%;`}>
-              <!-- Your speech bubble content here -->
-              Very cool!
-            </div>
+        </div>
+        <div class = donut-container style = {"top: 10%"}>
+        <img src={donutHype} alt="Donut Image" style="width: 200px;">
+        <div class="speech-bubble" style = {`top: -10%`}>
+          <!-- Your speech bubble content here -->
+          It can be helpful to look at a graph and have fun sayings to remember how good or bad a time complexity is!
         </div>
     </div>
-  </div>
+    </div>
+</div>
+
+
   
