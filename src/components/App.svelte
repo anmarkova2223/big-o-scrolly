@@ -18,6 +18,9 @@
   import constantDonut from '../lib/constant-donut.png';
     import { index } from 'd3';
 
+    import Sidebar from './Sidebar.svelte';
+    let sidebar_show = false;
+
   let donuts = [
     { src: donutWave, top: 100, left: 35, width: 150 },
     { src: donutThinkRight, top: 200, left: 35, width: 130 },
@@ -33,6 +36,7 @@
     { src: donutThinkRight, top: 1200, left: 35, width: 130 },
     { src: donutWaveLeft, top: 1300, left: 35, width: 140 }
   ];
+
 
   function handleDonutHover(index) {
     donuts[index].hovered = true;
@@ -85,6 +89,8 @@
     <div class="progress-fill"></div>
   </div>
 </header>
+
+<Sidebar bind:show={sidebar_show} />
 
 <main>
   <div>
