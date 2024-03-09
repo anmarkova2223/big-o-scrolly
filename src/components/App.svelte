@@ -27,6 +27,8 @@
 
   import Sidebar from './Sidebar.svelte';
   let sidebar_show = false;
+  let circles = ["Welcome", "Explanation", "The How", "Graph", "Constant", "Logarithmic", "Linear", "Quasilinear", "Quadratic", "Exponential", "Factorial", "Practice", undefined];
+  console.log(circles)
 
   let donutTexts = [
     "Explanation",
@@ -101,14 +103,18 @@
     const pixels = window.scrollY;
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
     let percentage = (pixels / totalHeight) * 100;
-    percentage = Math.min(percentage, 98.5);
-    document.querySelector('.progress-bar').style.width = `${percentage}%`;
+    percentage = Math.min(percentage, 100);
+    document.querySelector('.progress-fill').style.width = `${percentage}%`;
   }
   // Write your JS here, or import other files
 </script>
 <header>
   <div class="progress-bar">
-    <div class="progress-fill"></div>
+    <div class="progress-fill">
+    {#each circles as text, index (index)}
+    <div class="circle" style={`left: ${index / (circles.length - 1) * 100}%;`}>{text}</div>
+    {/each}
+  </div>
   </div>
 </header>
 
@@ -213,6 +219,13 @@
     margin: 0;
     padding: 0;
   }
+  header {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    white-space: nowrap;
+  }
 
   header{
     position: fixed;
@@ -228,17 +241,33 @@
   .progress-bar {
     position: inherit;
     top: 10px;
-    left: 5;
-    width: 0px;
+    left: 10px;
+    width: 98.5%;
     height: 30px;
     border-radius: 5px;
-    background-color: #4CAF50;
+    background-color: #f9f9f9;
+    overflow: hidden;
   }
   .progress-fill {
     width: 0%;
     height: 100%;
-    background-color: #b1e8ea;
+    background-color: #fa96e1;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .circle {
+    margin-left: 10px;
+    position: absolute;
+    width: 10px;
+    height: 0px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-color: black;
   }
 
   .donut-container {
