@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import Constant from '../lib/Constant.svelte';
+  // import Exponential from '../lib/Exponential.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -143,9 +144,53 @@
         <div class="box_content" style="margin-top: 16%; text-align: center; padding: 20px;">
           Welcome to Big O Notation by the Graphic Girls! <br><br>My name is Big O! I am an adorable donut representing Big O itself! <br><br>This webpage was made by Anastasiya Markova, Maryam Almahashnah, and Zoe Ludena. I was actually drawn by Zoe herself! <br><br>I hope you are as excited as me to learn all about Big O Notation. This web page aims to teach you about the history of Big O notation, why it is relevant to you as a programmer, and how you can calculate it from other algorithms.
         </div>
+      {:else if index === 1}
+        <div class="box_content">
+          Explanation
+        </div>
+      {:else if index === 2}
+        <div class="box_content">
+          The How
+        </div>
+      {:else if index === 3}
+        <div class="box_content">
+          Graph
+        </div>
       {:else if index === 4}
+        <div class="box_content">
+          <Constant />
+        </div>
+        {:else if index === 5}
+        <div class="box_content">
+          Logarithmic
+        </div>
+      {:else if index === 6}
+        <div class="box_content">
+          Linear
+        </div>
+      {:else if index === 7}
+        <div class="box_content">
+          Quasilinear
+        </div>
+      {:else if index === 8}
+        <div class="box_content">
+          Quadratic
+        </div>
+      {:else if index === 9}
+        <div class="box_content">
+          Exponential
+        </div>
+      {:else if index === 10}
+        <div class="box_content">
+          Factorial
+        </div>
+      {:else if index === 11}
+        <div class="box_content">
+          Practice
+        </div>
+      {:else if index === 12}
       <div class="box_content">
-        <Constant />
+        Sources
       </div>
       {/if}
     </div>
