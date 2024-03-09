@@ -56,12 +56,15 @@
     }
 
     .donut-container {
-    position: relative;
-  }
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
   .speech-bubble {
     position: absolute;
-    max-width: 300px;
+    /* max-width: 300px; */
     background-color: #CCCCCC;
     padding: 10px;
     border-radius: 10px;
@@ -95,7 +98,7 @@
     <p>Now you might be wondering, "Big O" exponential time cannot be that bad. I think you're being a bit dramatic... it can't be that different from quadratics!"</p>
     <div class = "donut-container" style = "margin-top: 10">
     <img src={donutThink} alt="Donut Image" style="width: 100px; margin-top: 70px;">
-      <div class="speech-bubble" style={`top: 30px;`}> 
+      <div class="speech-bubble" style={`top: 30px; width: 300px`}> 
         <!-- adjust style as needed for placement -->
       Bet. Let's look at an example.
       </div>
@@ -107,8 +110,14 @@
     <p><Katex>2**30 - 1 = 1073741823</Katex> moves, which takes <Katex>1073741823</Katex> moves <Katex>* 1/10^6</Katex> seconds/move <Katex>= 1073741.82</Katex> seconds</p>
     <p>Wait a minute... that's about 12.4 days! Oh no!</p>
     <br>
-    <p>Now you might be saying: "Big O, what about negative exponentials?" That would be a very smart question, so Big O would say: "What a great observation! As long as coefficients are positive multiples of <Katex>n</Katex> then the exponentials have a greater time complexity."</p>
-    <br>
+    <p>Now you might be saying: "Big O, what about negative exponentials?" That would be a very smart question, so Big O would say:</p>
+    <div class="donut-container" style="margin-top: 10px;">
+        <img src={donutHypeClosed} alt="Donut Image" style="width: 120px; margin-top: 70px;">
+        <div class="speech-bubble" style="top: 40px; width: 700px ;"> 
+            <!-- adjust style as needed for placement -->
+            What a great observation! As long as coefficients are positive multiples of <Katex>n</Katex> then the exponentials have a greater time complexity.
+        </div>
+    </div>    
     <p>Lets look at some more examples on how we can calculate exponential time.</p>
     <pre>
       <code class="language-python">
