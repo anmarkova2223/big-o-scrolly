@@ -229,7 +229,7 @@
     position: inherit;
     top: 10px;
     left: 5;
-    width: 1440px;
+    width: 0px;
     height: 30px;
     border-radius: 5px;
     background-color: #4CAF50;
