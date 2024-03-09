@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import Constant from '../lib/Constant.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -140,7 +141,7 @@
     <div class="box_container" class:appear={boxAppears[index]}>
       {#if index === 0}
         <div class="box_content">
-          This is some text inside the box container.
+          <Constant />
         </div>
       {/if}
     </div>
@@ -211,11 +212,12 @@
     position: absolute;
     top: 0;
     left: 200px;
-    width: 400px;
+    width: 1000px;
     height: 550px;
     background-color: green ;
     opacity: 0;
     transition: opacity 500ms ease-in;
+    overflow-y: auto;
     /* display: flex;
     align-items: center;
     justify-content: center; */
