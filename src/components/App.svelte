@@ -20,18 +20,18 @@
 
   let donuts = [
     { src: donutWave, top: 100, left: 35, width: 150 },
-    { src: donutThinkRight, top: 200, left: 35, width: 150 },
+    { src: donutThinkRight, top: 200, left: 35, width: 130 },
     { src: donutHypeClosed, top: 300, left: 35, width: 150 },
-    { src: graphDonut, top: 400, left: 35, width: 150 },
-    { src: constantDonut, top: 500, left: 35, width: 150 },
-    { src: logDonut, top: 600, left: 35, width: 150 },
-    { src: linearDonut, top: 700, left: 35, width: 150 },
-    { src: nlognDonut, top: 800, left: 35, width: 150 },
-    { src: quadraticDonut, top: 900, left: 35, width: 150 },
-    { src: exponentialDonut, top: 1000, left: 35, width: 150 },
-    { src: factorialDonut, top: 1100, left: 35, width: 150 },
-    { src: donutThinkRight, top: 1200, left: 35, width: 150 },
-    { src: donutWaveLeft, top: 1300, left: 35, width: 150 }
+    { src: graphDonut, top: 400, left: 35, width: 180 },
+    { src: constantDonut, top: 500, left: 35, width: 180 },
+    { src: logDonut, top: 600, left: 35, width: 180 },
+    { src: linearDonut, top: 700, left: 35, width: 180 },
+    { src: nlognDonut, top: 800, left: 35, width: 180 },
+    { src: quadraticDonut, top: 900, left: 35, width: 180 },
+    { src: exponentialDonut, top: 1000, left: 35, width: 180 },
+    { src: factorialDonut, top: 1100, left: 35, width: 180 },
+    { src: donutThinkRight, top: 1200, left: 35, width: 130 },
+    { src: donutWaveLeft, top: 1300, left: 35, width: 140 }
   ];
 
   function handleDonutHover(index) {
