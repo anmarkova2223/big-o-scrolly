@@ -3,6 +3,7 @@
   import Constant from '../lib/Constant.svelte';
   import About from '../lib/About.svelte';
   import Tips from '../lib/Tips.svelte';
+  import Sources from '../lib/Sources.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -40,7 +41,7 @@
   ]
 
   let donuts = [
-    { src: donutWave, label: "", top: 100, left: 35, width: 150 },
+    { src: donutWave, label: "Welcome!", top: 100, left: 35, width: 150 },
     { src: donutThinkRight, label: donutTexts[0], top: 200, left: 35, width: 130 },
     { src: donutHypeClosed, label: donutTexts[1],top: 300, left: 35, width: 150 },
     { src: graphDonut, label: donutTexts[2],top: 400, left: 35, width: 180 },
@@ -128,6 +129,8 @@
         <div class="label_norm" style={`left: 43px`}>{label}</div>
       {:else if index === 4 || index === 10}
         <div class="label_norm" style={`left: 63px`}>{label}</div>
+      {:else if index === 0}
+        <div class="label_norm" style={`left: 49px`}>{label}</div>
       {:else if index === 5}
         <div class="label_norm" style={`left: 50px`}>{label}</div>
         {:else if index === 6}
@@ -191,7 +194,7 @@
         </div>
       {:else if index === 12}
       <div class="box_content">
-        Sources
+        <Sources />
       </div>
       {/if}
     </div>
