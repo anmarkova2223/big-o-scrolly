@@ -202,9 +202,9 @@
     z-index: 1;
   }
   .box_container {
-    position: relative;
+    position: absolute;
     top: 0;
-    left: 50;
+    left: 200px;
     width: 400px;
     height: 550px;
     background-color: green ;
