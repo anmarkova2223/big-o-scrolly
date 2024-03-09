@@ -137,7 +137,13 @@
         <div class="label_norm" style={`left: 55px`}>{label}</div>
     {/if}
     {/if}
-    <div class="box_container" class:appear={boxAppears[index]}></div>
+    <div class="box_container" class:appear={boxAppears[index]}>
+      {#if index === 0}
+        <div class="box_content">
+          This is some text inside the box container.
+        </div>
+      {/if}
+    </div>
   </div>
   {/each}
 </main>
@@ -218,5 +224,9 @@
   .box_container.appear {
     opacity: 1;
     transform: opacity 500mx ease-out;
+  }
+
+  .box_content {
+  /* Add styling for the text content */
   }
 </style>
