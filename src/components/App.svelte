@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import Constant from '../lib/Constant.svelte';
   import About from '../lib/About.svelte';
+  import Tips from '../lib/Tips.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -150,7 +151,7 @@
         </div>
       {:else if index === 2}
         <div class="box_content">
-          The How
+          <Tips />
         </div>
       {:else if index === 3}
         <div class="box_content">
