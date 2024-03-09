@@ -6,6 +6,7 @@
   import Sources from '../lib/Sources.svelte';
   import Graph from '../lib/Graph.svelte';
   import Intro from '../lib/Intro.svelte';
+  import Exponential from '../lib/Exponential.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -184,7 +185,7 @@
         </div>
       {:else if index === 9}
         <div class="box_content">
-          Exponential
+          <Exponential />
         </div>
       {:else if index === 10}
         <div class="box_content">
