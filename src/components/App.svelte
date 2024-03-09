@@ -72,7 +72,7 @@
     donuts[index].clicked = true;
   }
   let boxes;
-  let boxAppears = [false, false, false, false, false, false, false, false, false, false, false, false, false];
+  let boxAppears = [true, false, false, false, false, false, false, false, false, false, false, false, false];
 
   onMount(() => {
     // Write your code here
@@ -207,10 +207,17 @@
 
 <style>
   /* Write your CSS here */
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+  main {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
   header{
     position: fixed;
     background-color: #f9f9f9;
-    width: 1400px;
+    width: 100%;
     height: 50px;
     padding-inline: 10px;
     z-index: 100;
@@ -222,7 +229,7 @@
     position: inherit;
     top: 10px;
     left: 5;
-    width: 1400px;
+    width: 1440px;
     height: 30px;
     border-radius: 5px;
     background-color: #4CAF50;
@@ -287,4 +294,5 @@
   .box_content {
     text-align: center;
   }
+
 </style>
