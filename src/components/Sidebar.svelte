@@ -67,6 +67,13 @@
     #sidebar-content {
       padding: 20px;
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    div {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
   </style>
   
   <div class="sidebar-container" style="right: {show ? '0' : '-20rem'}">

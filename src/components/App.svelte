@@ -310,7 +310,7 @@
     opacity: 0;
     transition: opacity 500ms ease-in;
     overflow-y: auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: -1px 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     /* display: flex;
     align-items: center;
