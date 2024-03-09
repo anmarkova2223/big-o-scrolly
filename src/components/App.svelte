@@ -5,6 +5,7 @@
   import Tips from '../lib/Tips.svelte';
   import Sources from '../lib/Sources.svelte';
   import Graph from '../lib/Graph.svelte';
+  import Intro from '../lib/Intro.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -146,8 +147,8 @@
     {/if}
     <div class="box_container" class:appear={boxAppears[index]}>
       {#if index === 0}
-        <div class="box_content" style="margin-top: 16%; text-align: center; padding: 20px;">
-          Welcome to Big O Notation by the Graphic Girls! <br><br>My name is Big O! I am an adorable donut representing Big O itself! <br><br>This webpage was made by Anastasiya Markova, Maryam Almahashnah, and Zoe Ludena. I was actually drawn by Zoe herself! <br><br>I hope you are as excited as me to learn all about Big O Notation. This web page aims to teach you about the history of Big O notation, why it is relevant to you as a programmer, and how you can calculate it from other algorithms.
+        <div class="box_content" style="margin-top: 10%; text-align: center; padding: 20px;">
+          <Intro />
         </div>
       {:else if index === 1}
         <div class="box_content">
