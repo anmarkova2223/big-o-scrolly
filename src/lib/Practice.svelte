@@ -32,19 +32,21 @@
     height: 100%; /* Ensure the container takes up the full height */
   }
 
-  .practice-question {
+  .practice.question {
     display: flex;
-    justify-content: center;
-    align-items: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
-  .answer {
-    margin-left: 10px;
+  .answer-choices {
+    margin-left: 20px;
     text-align: left;
-    width: auto;
-    max-width: 300px;
+    width: 400px;
   }
-  .answer.check {
+  .correct {
     color: green;
+  }
+  .incorrect {
+    color:red;
   }
 
     /* Adjust the pre element styles if needed */
@@ -77,8 +79,9 @@
     <p>Select wich time complexity best </p>
     
     <br>
+    <div class="practice">
     <h2>Problem 1</h2>
-    <div class="practice-question">
+    <div class="practice question">
     <pre>
         <code class="language-python">
         def funct(n):
@@ -124,12 +127,13 @@
         <div>
         <button on:click={revealAnswer}>{answerText}</button>
         {#if showAnswer}
-            <p class="answer check">{selected === correctAnswer ? 'Correct answer!' : 'Incorrect answer. Please try again.'}</p>
+            <p class="answer check {selected === correctAnswer ? 'correct' : 'incorrect'}">{selected === correctAnswer ? 'Correct answer!' : 'Incorrect answer.'}</p>
             <p class="answer explanation"> Notice that even though the inner loop is bounded 
                 by n, it is only executed once due to the break statement. Hence, 
                 the time complexity of this algorithm is O(n).</p>
         {/if}
         </div>
-      </div>
+    </div>
+    </div>
     </div>
 </main>
