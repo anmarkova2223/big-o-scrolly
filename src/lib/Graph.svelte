@@ -103,7 +103,7 @@
         </div>
         <div class = donut-container style = {"top: 10%"}>
         <img src={donutHype} alt="Donut Image" style="width: 200px;">
-        <div class="speech-bubble" style = {`top: -10%`}>
+        <div class="speech-bubble" style = {`top: -20%`}>
           <!-- Your speech bubble content here -->
           It can be helpful to look at a graph and have fun sayings to remember how good or bad a time complexity is!
         </div>
