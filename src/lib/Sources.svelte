@@ -37,6 +37,7 @@
       <p>Prado, Kelvin Salton do. <a href="https://towardsdatascience.com/understanding-time-complexity-with-python-examples-2bda6e8158a7">Understanding Time Complexity with Python Examples</a>, Towards Data Science, 4 Mar. 2019</p>
       <p>Rowell, Eric. <a href="https://www.bigocheatsheet.com/">Know Thy Complexities!</a> Big-O Algorithms, 2016</p>
       <p>"Web Safe Color Chart." <a href="https://htmlcolorcodes.com/color-chart/web-safe-color-chart/">HTML Color Codes</a>, htmlcolorcodes.com. Accessed 28 Feb. 2024.</p>
+      <p>OpenAI. "ChatGPT 3.5"</p>
       
       <!-- <h3 style="text-align: center;">Click on the donut to go back to the home page!</h3>
       <img src={donutWaveLeft} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;" on:click={handleDonutClick}> -->
