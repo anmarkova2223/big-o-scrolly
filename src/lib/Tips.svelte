@@ -80,8 +80,12 @@
       </ol>
       <h2>Things to Keep in Mind</h2>
       <ul>
-        <li>Big O for the algorithm is the portion that takes the longest time (is the slowest).</li>
-        <li>If your algorithm has multiple sections to it that utilize <Katex>n</Katex> that are not nested together then you add the functions.</li>
+        <li>Big O for an algorithm is the portion that takes the longest time (AKA is the slowest).</li>
+        <br>
+        <li>If your algorithm has multiple sections to it that utilize <Katex>n</Katex> that are not nested together then you add the complexities together, then take the one that grows the slowest.</li>
+        <br>
+        <li>Sometimes the easiest way to calculate Big O is by doing a few iterations with different <Katex>n</Katex>s and seeing how they scale! Try to look for patterns.</li>
+        <h4>Let's look at an example:</h4>
         <pre>
           <code class="language-python">
   # n is 5 (length of the list)
@@ -106,20 +110,20 @@
           </code>
       </pre>
       <br>
-        <li>We say <Katex>n</Katex> is approaching infinity because we want to see how algorithms scale. This means that constants do not matter when calculating Big O.</li>
+        <li>We say <Katex>n</Katex> is approaching infinity because we want to see how algorithms scale in the long term. This means that constants do not matter when calculating Big O.</li>
           <ul>
             <li>This is to say, we only care about dominant terms and not the coefficients.</li>
-            <li>For example: If you have <Katex>O(3 + 5n + n^2 + 6n^2)</Katex> then the Big O Notation is <Katex>O(n^2)</Katex>. In general we ignore the constants. If you did look at constants we know <Katex>6n^2</Katex> will take the longest, but when we ignore the coefficient it becomes <Katex>O(n^2)</Katex>.</li>
+            <li>For example: If you have <Katex>O(3 + 5n + n^2 + 6n^2)</Katex> then the Big O Notation is <Katex>O(n^2)</Katex>. If you did look at constants we know <Katex>6n^2</Katex> will take the longest, but when we ignore the coefficient it becomes <Katex>O(n^2)</Katex> because ultimately the <Katex>6</Katex> does not matter.</li>
           </ul>
         <br>
-        <li>When calculating Big O Notation for recursive functions one should look at where <Katex>n</Katex> is shrinking and calculate by solving recurrences.</li>
+        <li>When calculating Big O Notation for recursive functions one should look at where <Katex>n</Katex> is shrinking and calculate by solving recurrences. Here are the steps for success!</li>
         <ol>
           <li>"Unroll" several times to find a pattern.</li>
           <li>Write a general formula for the <Katex>kth</Katex> unroll.</li>
           <li>Solve for the number of unrolls needed to get to the base case.</li>
           <li>Plug this number into the general formula.</li>
         </ol>
-<p>Lets look at an example of this:</p>
+<h4>Recursive Example:</h4>
 <pre>
 <code class="language-python">
 def binary_search(arr, t, start, stop):
@@ -186,7 +190,36 @@ Assumes arr is sorted
             <li>The operation that will take longer is <Katex>log_2(n)</Katex>, so our time complexity is: <Katex>O(n)</Katex>.</li>
           </ul>
         </ol>
-      </ul>
+      <p>Note that this method might not work for everyone and that is okay! If this is not intuitive for you it might help if you see how the number of outputs scale by choosing different <Katex>n</Katex> values and going through the code.</p>
+    </ul>
+      <h2>A Tip to Use with Caution</h2>
+    <ul>
+      <p>It is generally accepted that you can multiply elements in for loops together. This means if you see a for loop then you can assume the constant elements inside will always run, thus making the runtime <Katex>O(n)</Katex>. <b>However</b> you should use this tip with caution because it is not always correct.</p>
+      <h4>Times when this does not work:</h4>
+      <li>When an inner element ends the loop early (like a break or a return statement).</li>
+      <li>When it is a while loop and the element it is iterating over changes in an unexpected way.</li>
+    <h4>Example of when multiplication does not work:</h4>
+    <pre>
+      <code class="language-python">
+def not_n_squared()
+  
+  for i in range(n):
+    for j in range(n):
+
+        # If you had stopped and ONLY looked at the for loops
+          # you might come to the conclusion that the answer would be O(n^2)
+
+      if i &gt 0:
+        return
+      
+      # But when you look at this condition statement, the conditional is O(1)
+        # and on the 2nd iteration of the outer for loop the inner for loop
+          # terminates the entire function! Making the time O(n)!
+      </code>
+  </pre>
+  <p>All this to say, please use multiplication with caution! You must look at the entire function to determine the time complexity!</p>
+  </ul>
+      <br>
       <!-- <p style="text-align: center;">Great work! Click on the donut to go back to the home page!</p>
       <img src={donutWaveLeft} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;"> -->
 </main>
