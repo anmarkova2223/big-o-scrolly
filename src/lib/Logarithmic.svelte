@@ -108,7 +108,7 @@
 <main class="container">
   <h1>Logarithmic Time</h1>
   <p>Imagine yourself on a journey through the realm of algorithms. As you delve deeper into the complexities of computational efficiency, you encounter a concept known as logarithmic time.</p>
-  <p>When an algorithm operates in <Katex>O(log n)</Katex> time complexity, it signifies a fascinating characteristic: as the input size grows, the number of operations required grows very slowly.</p>
+  <p>When an algorithm operates in <Katex>O(\log n)</Katex> time complexity, it signifies a fascinating characteristic: as the input size grows, the number of operations required grows very slowly.</p>
   <p>Consider it akin to navigating through a vast library of books. With each doubling of the library's size, your search strategy evolves only incrementally. This is precisely the essence of logarithmic time.</p>
   <h4>Verbal Example:</h4>
   <p>Imagine yourself as an adventurer exploring the depths of an enchanted forest. Deep within its heart lies a mystical array of treasures, each hidden within a series of interconnected chambers. Your quest? To uncover the greatest treasure of them all - the maximum value hidden within an array of numbers.</p>

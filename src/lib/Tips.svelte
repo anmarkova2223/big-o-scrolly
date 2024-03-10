@@ -178,16 +178,16 @@ Assumes arr is sorted
           <ul>
             <li>Now we want to solve for K to figure out how many unrolls is needed to get to the base case.</li>
             <li>We set what is inside of <Katex>T</Katex> to be equal to one: <Katex>n/2^k = 1</Katex>. Now we solve!</li>
-            <li><Katex>n=2^k</Katex> means that <Katex>k = log_2(n)</Katex></li>
+            <li><Katex>n=2^k</Katex> means that <Katex>k = \log_2(n)</Katex></li>
           </ul>
           <br>
           <li>Plug this number into the general formula.</li>
           <ul>
-            <li>We are almost done! now we need to plug <Katex>k = log_2(n)</Katex> into our general equation.</li>
-            <li>Plugging it in we get: <Katex>T(n/2**(log_2(n)) + log_2(n))</Katex>.</li>
-            <li>We then simplify to get: <Katex>T(n/n) + log_2(n)</Katex>, which then becomes <Katex>T(1) + log_2(n)</Katex>.</li>
-            <li>This means we essentially have <Katex>1 + log_2(n)</Katex>!</li>
-            <li>The operation that will take longer is <Katex>log_2(n)</Katex>, so our time complexity is: <Katex>O(n)</Katex>.</li>
+            <li>We are almost done! now we need to plug <Katex>k = \log_2(n)</Katex> into our general equation.</li>
+            <li>Plugging it in we get: <Katex>T(n/2**(\log_2(n)) + \log_2(n))</Katex>.</li>
+            <li>We then simplify to get: <Katex>T(n/n) + \log_2(n)</Katex>, which then becomes <Katex>T(1) + \log_2(n)</Katex>.</li>
+            <li>This means we essentially have <Katex>1 + \log_2(n)</Katex>!</li>
+            <li>The operation that will take longer is <Katex>\log_2(n)</Katex>, so our time complexity is: <Katex>O(n)</Katex>.</li>
           </ul>
         </ol>
       <p>Note that this method might not work for everyone and that is okay! If this is not intuitive for you it might help if you see how the number of outputs scale by choosing different <Katex>n</Katex> values and going through the code.</p>
