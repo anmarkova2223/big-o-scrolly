@@ -107,10 +107,10 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
         <div class="practice question" style="display:flex;">
         <pre>
             <code class="language-python">
-            k = 0;
-            for i in range(n//2,n):
-                for j in range(2,n,pow(2,j)):
-                    k = k + n / 2;
+k = 0;
+for i in range(n//2, n):
+    for j in range(2, n, pow(2, j)):
+        k = k + n / 2;
             </code>
         </pre>
         <div class="answer-choices">
@@ -180,13 +180,19 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
             {#if showAnswer}
                 <p class="answer check {selected === correctAnswer ? 'correct' : 'incorrect'}">{selected === correctAnswer ? 'Correct answer!' : 'Incorrect answer.'}</p>
                 <p class="answer explanation"> 
-                    If you notice, j keeps doubling till it is less than or equal to n. Several times, we can double a number till it is less than n would be log(n). 
+                    If you notice, <code>j</code> keeps doubling till it is less than or equal to <Katex>n</Katex>. Several times, we can double a number till it is less than <Katex>n</Katex> would be <Katex>\log(n)</Katex>.
+                    <br> <br>
                     Let’s take the examples here. 
-                    for n = 16, j = 2, 4, 8, 16 
-                    for n = 32, j = 2, 4, 8, 16, 32 
-                    So, j would run for O(log n) steps. 
-                    i runs for n/2 steps. 
-                    So, total steps = O(n/ 2 * log (n)) = O(n * log n).
+                    <br>
+                    for <code>n = 16</code>, <code>j = 2, 4, 8, 16</code>
+                    <br>
+                    for <code>n = 32</code>, <code>j = 2, 4, 8, 16, 32</code>
+                    <br>
+                    So, <code>j</code> would run for <Katex>O(\log n)</Katex> steps.
+                    <br>
+                    And <code>i</code> runs for <Katex>n/2</Katex> steps. 
+                    <br>
+                    So, total steps are <Katex>O(n/2 * \log(n)) = O(n \space \log n)</Katex>.
                     </p>
             {/if}
             </div>

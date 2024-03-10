@@ -106,10 +106,10 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
         <div class="practice question" style="display:flex;">
         <pre>
             <code class="language-python">
-            a = 0;
-            for i in range(N):
-                for j in reversed(range(i,N)):
-                a = a + i + j;                
+a = 0;
+for i in range(N):
+    for j in reversed(range(i,N)):
+    a = a + i + j;                
             </code>
         </pre>
         <div class="answer-choices">
@@ -178,11 +178,14 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
             <button on:click={revealAnswer}>{answerText}</button>
             {#if showAnswer}
                 <p class="answer check {selected === correctAnswer ? 'correct' : 'incorrect'}">{selected === correctAnswer ? 'Correct answer!' : 'Incorrect answer.'}</p>
-                <p class="answer explanation"> The above code runs total no of times 
-                    = N + (N – 1) + (N – 2) + … 1 + 0 
-                    = N * (N + 1) / 2 
-                    = 1/2 * N^2 + 1/2 * N 
-                    O(N^2) times.
+                <p class="answer explanation"> The above code can be written in the following way:<br><Katex>
+                    N + (N - 1) + (N - 2) + … 1 + 0 </Katex>
+                    <br>
+                    <Katex>= N * (N + 1) / 2</Katex>
+                    <br>
+                    <Katex>= 1/2 * N^2 + 1/2 * N</Katex>
+                    <br>
+                    This means the time complexity is <Katex>O(N^2)</Katex>.
                     </p>
             {/if}
             </div>

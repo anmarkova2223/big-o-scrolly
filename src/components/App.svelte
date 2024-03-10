@@ -205,7 +205,7 @@
         </div>
       {:else if index === 11}
         <div class="box_content">
-          <Practice></Practice>
+          <Practice />
         </div>
       {:else if index === 12}
       <div class="box_content">

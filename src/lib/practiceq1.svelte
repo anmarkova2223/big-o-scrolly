@@ -105,14 +105,14 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
         <div class="practice question">
         <pre>
             <code class="language-python">
-            def funct(n):
-            if (n==1):
-                return
-            for i in range(1, n+1):
-                for j in range(1, n + 1):
-                    print("*", end = "")
-                    break
-                print()
+def funct(n):
+if (n==1):
+    return
+for i in range(1, n + 1):
+    for j in range(1, n + 1):
+        print("*", end = "")
+        break
+    print()
             </code>
         </pre>
         <div class="answer-choices">
@@ -182,8 +182,8 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
             {#if showAnswer}
                 <p class="answer check {selected === correctAnswer ? 'correct' : 'incorrect'}">{selected === correctAnswer ? 'Correct answer!' : 'Incorrect answer.'}</p>
                 <p class="answer explanation"> Notice that even though the inner loop is bounded 
-                    by n, it is only executed once due to the break statement. Hence, 
-                    the time complexity of this algorithm is O(n).</p>
+                    by <Katex>n</Katex>, it is only executed once due to the break statement. Hence, 
+                    the time complexity of this algorithm is <Katex>O(n)</Katex>.</p>
             {/if}
             </div>
         </div>
