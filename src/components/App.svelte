@@ -200,7 +200,7 @@
         </div>
       {:else if index === 10}
         <div class="box_content">
-          Factorial
+          <Factorial />
         </div>
       {:else if index === 11}
         <div class="box_content">

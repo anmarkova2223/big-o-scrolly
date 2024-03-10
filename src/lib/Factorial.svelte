@@ -72,7 +72,10 @@
 
   .donut-container {
       position: relative;
-  }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
 
   .speech-bubble {
@@ -86,18 +89,6 @@
       transform: translateY(-50%);
   }
 
-
-  .speech-bubble::before {
-      content: '';
-      position: absolute;
-      top: 150%;
-      left: 46%;
-      margin-top: -10px;
-      border-width: 10px;
-      border-style: solid;
-      border-color: transparent transparent transparent #CCCCCC;
-      transform: rotate(90deg);
-  }
 
   ul {
     list-style-type: disc;
@@ -119,18 +110,6 @@
       margin-left: 20px;
   }
 
-  .speech-bubble::before {
-      content: '';
-      position: absolute;
-      top: 150%;
-      left: 46%;
-      margin-top: -10px;
-      border-width: 10px;
-      border-style: solid;
-      border-color: transparent transparent transparent #CCCCCC;
-      transform: rotate(90deg);
-  }
-
 </style>
 
 
@@ -139,7 +118,7 @@
   <p>Now let's dive into Factorial Time, one of the slowest complexities out there. Brace yourself!</p>
   <div class="donut-container">
       <img src={omgBanana} alt="Banana Image" style="width: 100px; margin-top: 70px;">
-      <div class="speech-bubble" style="top: 30px;">
+      <div class="speech-bubble" style="top: 30px; width: 300px;">
           Oh no, here we go again...
       </div>
   </div>
