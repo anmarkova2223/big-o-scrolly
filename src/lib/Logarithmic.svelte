@@ -9,6 +9,7 @@
 
   import donutWave from '../lib/donut-wave.png';
   import { goto } from '$app/navigation';
+  import log from '../lib/log-no-amber.png';
 
 
   function handleDonutClick() {
@@ -27,46 +28,61 @@
 
 <style>
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 0 100px;
-  height: 100%; /* Ensure the container takes up the full height */
-}
-
-
-  /* Adjust the pre element styles if needed */
-  pre {
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f4f4;
-      border-radius: 5px;
-      overflow-x: auto;
       display: flex;
       justify-content: center;
-  }
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 100px;
+      height: 100%; /* Ensure the container takes up the full height */
+    }
+  
+    /* Adjust the pre element styles if needed */
+    pre {
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        overflow-x: auto;
+        display: flex;
+        justify-content: center;
+    }
 
+    pre code {
+        text-align: left; /* Ensure code is left-aligned */
+    }
 
-  pre code {
-      text-align: left; /* Ensure code is left-aligned */
-  }
+    :global(.katex) {
+        font-size: inherit; /* Make KaTeX font size same as the regular text */
+    }
 
+    :global(.katex-display) {
+        font-size: inherit; /* Adjust font size for KaTeX display mode */
+    }
+  
+    ul {
+        list-style-type: disc; /* Set the bullet style */
+        text-align: left;
+        padding-left: 0; /* Remove default padding */
+    }
+  
+    ul ul {
+          list-style-type: circle; /* Change the bullet style for the nested list */
+          text-align: left;
+          margin-top: 5px; /* Adjust the spacing between the parent and nested lists */
+          margin-left: 40px;
+      }
+  
+    li {
+        margin-left: 20px; /* Adjust the space between bullet and text */
+    }
 
-  :global(.katex) {
-      font-size: inherit; /* Make KaTeX font size same as the regular text */
-  }
-
-
-  :global(.katex-display) {
-      font-size: inherit; /* Adjust font size for KaTeX display mode */
-  }
-
-
-  .donut-container {
+    .donut-container {
       position: relative;
-  }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
 
   .speech-bubble {
@@ -80,28 +96,6 @@
       transform: translateY(-50%);
   }
 
-
-  ul {
-      list-style-type: disc;
-      text-align: left;
-      padding-left: 0;
-  }
-
-
-  ul ul {
-      list-style-type: circle;
-      text-align: left;
-      margin-top: 5px;
-      margin-left: 40px;
-  }
-
-
-  li {
-      text-align: left;
-      margin-left: 20px;
-  }
-
-
 </style>
 
 
@@ -110,6 +104,13 @@
   <p>Imagine yourself on a journey through the realm of algorithms. As you delve deeper into the complexities of computational efficiency, you encounter a concept known as logarithmic time.</p>
   <p>When an algorithm operates in <Katex>O(\log n)</Katex> time complexity, it signifies a fascinating characteristic: as the input size grows, the number of operations required grows very slowly.</p>
   <p>Consider it akin to navigating through a vast library of books. With each doubling of the library's size, your search strategy evolves only incrementally. This is precisely the essence of logarithmic time.</p>
+  <div class = "donut-container" style = "margin-top: 10">
+    <img src={log} alt="Log Image" style="width: 120px; margin-top: 70px;">
+      <div class="speech-bubble" style={`top: 30px; width: 300px`}> 
+        <!-- adjust style as needed for placement -->
+      Basically, we like logarithmic time a lot!
+      </div>
+    </div>
   <h4>Verbal Example:</h4>
   <p>Imagine yourself as an adventurer exploring the depths of an enchanted forest. Deep within its heart lies a mystical array of treasures, each hidden within a series of interconnected chambers. Your quest? To uncover the greatest treasure of them all - the maximum value hidden within an array of numbers.</p>
   <p>As you step into the first chamber, you encounter a curious mechanism - a recursive algorithm called <code>find_max_recursive</code>. This algorithm holds the key to unraveling the secrets of the forest's treasures.</p>

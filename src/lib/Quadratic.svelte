@@ -106,7 +106,7 @@
 </style>
 <main class="container">
     <h1>Quadratic Time</h1>
-    <p>We classify quadratic time as horrible! This is because the complexity of polynomials increase as the exponent increases. AKA they are very slow. The notation for quadratic time is <Katex>O(n^2)</Katex>.</p>
+    <p>We classify quadratic time as very bad (yet it is not the worst)! This is because the complexity of polynomials increase as the exponent increases. AKA they are very slow. The notation for quadratic time is <Katex>O(n^2)</Katex>.</p>
     <p>But it is important to note just because we say it is bad does not mean it is never used.</p>
     <p>Some common algorithms that have <Katex>O(n^2)</Katex> time complexity are insertion sort, Floyd-Warshall's algorithm (shortest paths between all pairs of vertices in a graph), naive algorithms with nested loops, and matrix multiplication.</p>
     <h4>Verbal Example:</h4>
