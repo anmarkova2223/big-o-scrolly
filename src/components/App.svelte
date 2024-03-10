@@ -6,7 +6,7 @@
   import Sources from '../lib/Sources.svelte';
   import Graph from '../lib/Graph.svelte';
   import Intro from '../lib/Intro.svelte';
-  import Exponential from '../lib/Exponential.svelte';
+  //import Exponential from '../lib/Exponential.svelte';
   //import Linear from '../lib/Linear.svelte';
   //import Quadratic from '../lib/Quadratic.svelte';
   //import Quasilinear from '../lib/Quasilinear.svelte';
