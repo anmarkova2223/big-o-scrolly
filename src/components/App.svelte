@@ -7,6 +7,11 @@
   import Graph from '../lib/Graph.svelte';
   import Intro from '../lib/Intro.svelte';
   import Exponential from '../lib/Exponential.svelte';
+  //import Linear from '../lib/Linear.svelte';
+  //import Quadratic from '../lib/Quadratic.svelte';
+  //import Quasilinear from '../lib/Quasilinear.svelte';
+  //import Factorial from '../lib/Factorial.svelte';
+  //import Logarithmic from '../lib/Logarithmic.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -175,19 +180,19 @@
         </div>
         {:else if index === 5}
         <div class="box_content">
-          Logarithmic
+          <Logarithmic />
         </div>
       {:else if index === 6}
         <div class="box_content">
-          Linear
+          <Linear />
         </div>
       {:else if index === 7}
         <div class="box_content">
-          Quasilinear
+          <Quasilinear />
         </div>
       {:else if index === 8}
         <div class="box_content">
-          Quadratic
+          <Quadratic />
         </div>
       {:else if index === 9}
         <div class="box_content">
@@ -195,7 +200,7 @@
         </div>
       {:else if index === 10}
         <div class="box_content">
-          Factorial
+          <Factorial />
         </div>
       {:else if index === 11}
         <div class="box_content">
