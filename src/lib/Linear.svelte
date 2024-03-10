@@ -117,15 +117,14 @@
     <pre>
         <code class="language-python">
  
- 
         len(lst) # The time complexity of this line is O(n)!
  
  
         len(my_string) # also O(n).
  
  
-        max(lst) # both max() and min() take O(n) because python has to go through every element in the list/array to find the smallest or largest one.
- 
+        max(lst) # both max() and min() take O(n) because python has to go 
+                #through every element in the list/array to find the smallest or largest element.
  
         </code>
     </pre>
