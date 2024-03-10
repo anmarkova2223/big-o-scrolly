@@ -46,6 +46,24 @@
       justify-content: center;
   }
 
+  .donut-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  .speech-bubble {
+      position: absolute;
+      max-width: 300px;
+      background-color: #CCCCCC;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      white-space: normal;
+      transform: translateY(-50%);
+  }
+
 
   pre code {
       text-align: left; /* Ensure code is left-aligned */
@@ -70,13 +88,12 @@
   <p>More complex than <Katex>O(n)</Katex>, but less complex than <Katex>O(n^2)</Katex>.</p>
 
   <p>Now you might be wondering, "What's the big deal about quasilinear time complexity? It can't be that different from linear or even logarithmic time, right?"</p>
-  <div class = "donut-container">
-  <img src={donutThink} alt="Donut Image" style="width: 150px;">
-    <div class="speech-bubble" style={`top: 10%; left: 23%;`}>
-      <!-- adjust style as needed for placement -->
-      Well, let's explore quasilinear time complexity with an example.
+  <div class="donut-container">
+    <img src={donutWaveLeft} alt="Donut Image" style="width: 100px; margin-top: 70px;">
+    <div class="speech-bubble" style="top: 30px; width: 300px;">
+        Let's look at some examples.
     </div>
-  </div>
+</div>
   <p>Imagine Big O is sorting a large list of elements using an efficient sorting algorithm like quicksort. Quicksort has an average-case time complexity of O(n log n). Now, you might think, "That's not too bad. It's better than quadratic time!"</p>
  
   <p>But wait, there's more to consider. Quasilinear time complexity grows slightly faster than linear time. Let's see how this can impact Big O's performance.</p>

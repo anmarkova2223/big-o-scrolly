@@ -188,7 +188,7 @@
         </div>
       {:else if index === 7}
         <div class="box_content">
-          Quasilinear
+          <Quasilinear />
         </div>
       {:else if index === 8}
         <div class="box_content">
