@@ -122,14 +122,15 @@
           Oh no, here we go again...
       </div>
   </div>
+  <h4>Verbal Example:</h4>
   <p>Imagine Big O is trying to generate all possible permutations of a given list of elements using the Heap's algorithm. This algorithm recursively generates all permutations of a list, resulting in a large number of recursive calls and computations.</p>
-  <p>The Heap's algorithm has a time complexity of <Katex>O(n!)</Katex>, where <Katex>n</Katex> is the size of the input list. This means that the runtime of the algorithm increases factorially with the size of the input (!).</p>
+  <p>The Heap's algorithm has a time complexity of <Katex>O(n!)</Katex>, where <Katex>n</Katex> is the size of the input list. This means that the runtime of the algorithm increases factorially with the size of the input!</p>
   <br>
-  <p>For example, if the input list has 5 elements, the algorithm will perform 120 operations. If the input list has 10 elements, the algorithm will perform 3,628,800 operations (!). As the input size grows, the number of operations required grows at an astronomical rate!</p>
+  <p>For example, if the input list has 5 elements, the algorithm will perform 120 operations. If the input list has 10 elements, the algorithm will perform 3,628,800 operations. As the input size grows, the number of operations required grows at an astronomical rate!</p>
   <p><Katex>O(mg!)</Katex>. This is bad.</p>
 
 
-  <h2>Examples</h2>
+  <h4>Heap Permutations Code Example:</h4>
   <pre>
   <code class="language-python">
       def heap_permutation(data, n):
