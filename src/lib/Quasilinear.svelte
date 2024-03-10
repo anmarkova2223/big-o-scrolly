@@ -135,14 +135,13 @@
             sorted_list = sorted(input_list)  # Sorting the input list
             return sorted_list
       </code>
+    </pre>
       
       <p>This function takes an input list and returns a sorted version of that list. Sorting algorithms like quicksort or merge sort achieve a time complexity of <Katex>O(n \log n)</Katex>, making them efficient for large datasets.</p>
       <p>As the input size increases, the runtime of these algorithms grows logarithmically with the size of the dataset. This means that doubling the input size results in a slightly more than doubling of the runtime, making them efficient choices for processing large datasets.</p>
 
       <br>
       <p>Fun Fact: Some common algorithms that are <Katex>O(n \space \log(n))</Katex> are merge sort, quicksort, and operations on a self-balancing binary search tree.</p>
-    
-  </pre>
   <!-- <p style="text-align: center;">Great work! Click on the donut to go back to the home page!</p>
   <img src={donutWaveLeft} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;" on:click={handleDonutClick}> -->
 </main>
