@@ -34,13 +34,14 @@
 
 <style>
   .container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
     padding: 0 100px;
-    height: 100%; /* Ensure the container takes up the full height */
+    height: 100%;
     }
     .buttons {
         display: flex;
@@ -60,6 +61,9 @@
         box-shadow: none;
         border-color: none;
     }
+    .button:hover {
+        color: #ffffff;
+    }
 
     :global(.katex) {
         font-size: inherit; /* Make KaTeX font size same as the regular text */
@@ -73,7 +77,7 @@
 
 <main class="container">
     <h1>Practice Questions</h1>
-    <p>Select wich time complexity best </p>
+    <p>Select which time complexity best describes the given code.</p>
     <br>
     {#if currentQuestion === 1}
     <Question1 />

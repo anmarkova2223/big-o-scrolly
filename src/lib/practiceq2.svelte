@@ -30,7 +30,7 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
   .answer-choices {
     margin-left: 20px;
     text-align: left;
-    width: 500px;
+    width: 400px;
   }
   .correct {
     color: green;
@@ -38,6 +38,43 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
   .incorrect {
     color:red;
   }
+
+  .radio-boxes {
+    margin-bottom: 5px;
+  }
+  .radio {
+    display: none;
+  }
+
+  .radio + label {
+    padding: 10px;
+    display: inline-block;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid #fa96e1;
+  }
+  .radio + label:hover {
+  background: #fa96e1; /* Add this line */
+  color:#f4f4f4;
+}
+
+  .radio:checked + label {
+    background: #fa96e1;
+    color:#f4f4f4;
+  }
+
+  button {
+        font-size: 12px;
+        background-color: #fa96e1;
+        border-radius: 5px;
+        padding: 2px 7px;
+        box-shadow: none;
+        border-color: #fa96e1;
+        margin-top: 5px;
+    }
+    button:hover {
+        color: #ffffff;
+    }
 
     /* Adjust the pre element styles if needed */
     pre {
@@ -77,71 +114,80 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
             </code>
         </pre>
         <div class="answer-choices">
-            <h3>Answer Choices</h3>
-            <div>
-                <label>
+            <h4>Answer Choices</h4>
+            <div class="radio-boxes">
+            <input type="checkbox" 
+                    class="radio" 
+                    id="option0"
+                    value="1" 
+                    name="status" 
+                    on:click={select} checked={selected === '1'}/>
+            <label for="option0"><Katex>O(1)</Katex>
+            </label>
+            <input type="checkbox" 
+                class="radio"
+                id="option1" 
+                value="logn" 
+                name="status"
+                on:click={select} checked={selected === 'logn'}/>
+            <label for="option1"><Katex>O(log(n))</Katex>
+            </label>
                 <input type="checkbox" 
-                        class="radio" 
-                        value="1" 
-                        name="status" 
-                        on:click={select} checked={selected === '1'}/><Katex>O(1)</Katex>
-                </label>
-                <label>
+                    class="radio"
+                    id="option2" 
+                    value="n" 
+                    name="status"
+                    on:click={select} checked={selected === 'n'}/>
+            <label for="option2"><Katex>O(n)</Katex>
+            </label>
+                <input type="checkbox" 
+                    class="radio"
+                    id="option3"
+                    value="nlog(n)" 
+                    name="status"
+                    on:click={select} checked={selected === 'nlog(n)'}/>
+            <label for="option3"><Katex>O(nlog(n))</Katex>
+            </label>
+            </div>
+            <div>
+                <input type="checkbox" 
+                    class="radio"
+                    id="option4" 
+                    value="nx" 
+                    name="status"
+                    on:click={select} checked={selected === 'nx'}/>
+            <label for="option4"><Katex>O(n^x)</Katex>
+            </label> 
+                <input type="checkbox" 
+                    class="radio"
+                    id="option5" 
+                    value="xn" 
+                    name="status"
+                    on:click={select} checked={selected === 'xn'}/>
+            <label for="option5"><Katex>O(x^n)</Katex>
+            </label>
                 <input type="checkbox" 
                     class="radio" 
-                    value="logn" 
+                    id="option6"
+                    value="n!" 
                     name="status"
-                    on:click={select} checked={selected === 'logn'}/><Katex>O(log(n))</Katex>
-                </label>
-                <label>
-                    <input type="checkbox" 
-                        class="radio" 
-                        value="n" 
-                        name="status"
-                        on:click={select} checked={selected === 'n'}/><Katex>O(n)</Katex>
-                </label>
-                <label>
-                    <input type="checkbox" 
-                        class="radio" 
-                        value="nlog(n)" 
-                        name="status"
-                        on:click={select} checked={selected === 'nlog(n)'}/><Katex>O(nlog(n))</Katex>
-                </label>
-                </div>
-                <div>
-                <label>
-                    <input type="checkbox" 
-                        class="radio" 
-                        value="nx" 
-                        name="status"
-                        on:click={select} checked={selected === 'nx'}/><Katex>O(n^x)</Katex>
-                </label> 
-                <label>
-                    <input type="checkbox" 
-                        class="radio" 
-                        value="xn" 
-                        name="status"
-                        on:click={select} checked={selected === 'xn'}/><Katex>O(x^n)</Katex>
-                </label>
-                <label>
-                    <input type="checkbox" 
-                        class="radio" 
-                        value="n!" 
-                        name="status"
-                        on:click={select} checked={selected === 'n!'}/><Katex>O(n!)</Katex>
-                </label>
-                </div>
+                    on:click={select} checked={selected === 'n!'}/>
+            <label for="option6"><Katex>O(n!)</Katex>
+            </label>
+            </div>
             <div>
             <button on:click={revealAnswer}>{answerText}</button>
             {#if showAnswer}
                 <p class="answer check {selected === correctAnswer ? 'correct' : 'incorrect'}">{selected === correctAnswer ? 'Correct answer!' : 'Incorrect answer.'}</p>
-                <p class="answer explanation"> If you notice, j keeps doubling till it is less than or equal to n. Several times, we can double a number till it is less than n would be log(n). 
+                <p class="answer explanation"> 
+                    If you notice, j keeps doubling till it is less than or equal to n. Several times, we can double a number till it is less than n would be log(n). 
                     Let’s take the examples here. 
                     for n = 16, j = 2, 4, 8, 16 
                     for n = 32, j = 2, 4, 8, 16, 32 
                     So, j would run for O(log n) steps. 
                     i runs for n/2 steps. 
-                    So, total steps = O(n/ 2 * log (n)) = O(n * log n)</p>
+                    So, total steps = O(n/ 2 * log (n)) = O(n * log n).
+                    </p>
             {/if}
             </div>
         </div>
