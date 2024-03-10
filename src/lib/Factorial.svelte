@@ -8,7 +8,7 @@
 
 
   import donutThink from '../lib/donut-think-left.png'
-  import donutSad from '../lib/donut-sad.png'
+//   import donutSad from '../lib/donut-sad.png'
   import omgBanana from '../lib/omg-banana.png'
   import donutHypeClosed from '../lib/donut-hype-eyes-closed.png';
   import { goto } from '$app/navigation';
@@ -17,18 +17,18 @@
   import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
 
 
-  function handleDonutClick() {
-  console.log("Back to homepage!")
-  goto('homepage');
-}
+//   function handleDonutClick() {
+//   console.log("Back to homepage!")
+// //   goto('homepage');
+// }
 
 
-import Sidebar from './Sidebar.svelte';
-let sidebar_show = false;
+// import Sidebar from './Sidebar.svelte';
+// let sidebar_show = false;
 </script>
 
 
-<Sidebar bind:show={sidebar_show} />
+<!-- <Sidebar bind:show={sidebar_show} /> -->
 
 
 <style>
@@ -170,6 +170,6 @@ let sidebar_show = false;
   <p>As you can imagine, factorial time complexity can quickly become unmanageable for even moderately sized inputs. We avoid algorithms with this time complexity as much as we can!</p>
 
 
-  <p style="text-align: center;">Awesome, you just learned about Factorial Time Complexity! Click on the donut to go back to the home page!</p>
-  <img src={donutHypeClosed} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;" on:click={handleDonutClick}>
+  <!-- <p style="text-align: center;">Awesome, you just learned about Factorial Time Complexity! Click on the donut to go back to the home page!</p>
+  <img src={donutHypeClosed} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;" on:click={handleDonutClick}> -->
 </main>

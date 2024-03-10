@@ -6,21 +6,21 @@
   import { goto } from '$app/navigation';
 
 
-  function handleDonutClick() {
-  console.log("Back to homepage!")
-  goto('homepage');
-}
+//   function handleDonutClick() {
+//   console.log("Back to homepage!")
+//   goto('homepage');
+// }
 
 
   console.log('Quasilinear.svelte loaded');
 
 
-  import Sidebar from './Sidebar.svelte';
-  let sidebar_show = false;
+  // import Sidebar from './Sidebar.svelte';
+  // let sidebar_show = false;
 </script>
 
 
-<Sidebar bind:show={sidebar_show} />
+<!-- <Sidebar bind:show={sidebar_show} /> -->
 
 
 <style>
@@ -126,6 +126,6 @@
       <p>Fun Fact: Some common algorithms that are <Katex>O(n \space \log(n))</Katex> are merge sort, quicksort, and operations on a self-balancing binary search tree.</p>
     
   </pre>
-  <p style="text-align: center;">Great work! Click on the donut to go back to the home page!</p>
-  <img src={donutWaveLeft} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;" on:click={handleDonutClick}>
+  <!-- <p style="text-align: center;">Great work! Click on the donut to go back to the home page!</p>
+  <img src={donutWaveLeft} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;" on:click={handleDonutClick}> -->
 </main>

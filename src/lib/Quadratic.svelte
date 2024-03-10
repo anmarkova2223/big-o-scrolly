@@ -9,18 +9,18 @@
   import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
 
 
-  function handleDonutClick() {
-  console.log("Back to homepage!")
-  goto('homepage');
-}
+//   function handleDonutClick() {
+//   console.log("Back to homepage!")
+//   goto('homepage');
+// }
 
 
-import Sidebar from './Sidebar.svelte';
-  let sidebar_show = false;
+// import Sidebar from './Sidebar.svelte';
+//   let sidebar_show = false;
 </script>
 
 
-<Sidebar bind:show={sidebar_show} />
+<!-- <Sidebar bind:show={sidebar_show} /> -->
 
 
 <style>
@@ -154,6 +154,6 @@ import Sidebar from './Sidebar.svelte';
 
 
  
-  <p style="text-align: center;">Great! Now you know a little more about Quadratic Time Complexity. Click on the donut to go back to the home page!</p>
-  <img src={donutThinkRight} alt="Donut Image" style="width: 150px;" on:click={handleDonutClick}>
+  <!-- <p style="text-align: center;">Great! Now you know a little more about Quadratic Time Complexity. Click on the donut to go back to the home page!</p>
+  <img src={donutThinkRight} alt="Donut Image" style="width: 150px;" on:click={handleDonutClick}> -->
 </main>

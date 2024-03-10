@@ -14,18 +14,18 @@
       import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
  
  
-    function handleDonutClick() {
-    console.log("Back to homepage!")
-    goto('homepage');
-  }
+//     function handleDonutClick() {
+//     console.log("Back to homepage!")
+//     goto('homepage');
+//   }
  
  
-    import Sidebar from './Sidebar.svelte';
-    let sidebar_show = false;
+//     import Sidebar from './Sidebar.svelte';
+//     let sidebar_show = false;
  </script>
  
  
- <Sidebar bind:show={sidebar_show} />
+ <!-- <Sidebar bind:show={sidebar_show} /> -->
  
  
  <style>
@@ -163,8 +163,8 @@
     <p>Inside the loop, the print() line accesses and prints each element of the input list using the index i. Since it accesses each element of the list once, this operation also takes linear time <Katex>O(n)</Katex> because it scales linearly with the size of the list.
     <p>Finally, the overall time complexity of the function is <Katex>O(n) + O(n-1) + O(n) = O(n + (n-1) + n) = O(3n-1) = O(3n) = 3 * O(n),</Katex> which is <Katex>O(n)</Katex>.</p>
  
- 
+<!--  
     <p style="text-align: center;">Great work! Click on the donut to go back to the home page!</p>
-    <img src={donutHypeClosed} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;" on:click={handleDonutClick}>
+    <img src={donutHypeClosed} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;" on:click={handleDonutClick}> -->
  </main>
  

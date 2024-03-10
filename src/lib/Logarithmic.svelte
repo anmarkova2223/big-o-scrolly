@@ -17,12 +17,12 @@
 }
 
 
-  import Sidebar from './Sidebar.svelte';
-  let sidebar_show = false;
+//   import Sidebar from './Sidebar.svelte';
+//   let sidebar_show = false;
 </script>
 
 
-<Sidebar bind:show={sidebar_show} />
+<!-- <Sidebar bind:show={sidebar_show} /> -->
 
 
 <style>
@@ -170,6 +170,6 @@
   <p>Mathematically, the time complexity of largest_power_of_two can be expressed as <Katex>O(\log n)</Katex>, where <Katex>n</Katex> represents the integer given.</p>
 
   </pre>
-  <p style="text-align: center;">Your journey continues! Click on the donut to return to the home page.</p>
-  <img src={donutWave} alt="Donut Image" style="width: 150px;" on:click={handleDonutClick}>
+  <!-- <p style="text-align: center;">Your journey continues! Click on the donut to return to the home page.</p>
+  <img src={donutWave} alt="Donut Image" style="width: 150px;" on:click={handleDonutClick}> -->
 </main>
