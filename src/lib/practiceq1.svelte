@@ -82,55 +82,59 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
         </pre>
         <div class="answer-choices">
             <h3>Answer Choices</h3>
+            <div>
             <label>
             <input type="checkbox" 
                     class="radio" 
                     value="1" 
                     name="status" 
-                    on:click={select} checked={selected === '1'}/>O(1)
+                    on:click={select} checked={selected === '1'}/><Katex>O(1)</Katex>
             </label>
             <label>
             <input type="checkbox" 
                 class="radio" 
                 value="logn" 
                 name="status"
-                on:click={select} checked={selected === 'logn'}/>O(log(n))
+                on:click={select} checked={selected === 'logn'}/><Katex>O(log(n))</Katex>
             </label>
             <label>
                 <input type="checkbox" 
                     class="radio" 
                     value="n" 
                     name="status"
-                    on:click={select} checked={selected === 'n'}/>O(n)
+                    on:click={select} checked={selected === 'n'}/><Katex>O(n)</Katex>
             </label>
             <label>
                 <input type="checkbox" 
                     class="radio" 
                     value="nlog(n)" 
                     name="status"
-                    on:click={select} checked={selected === 'nlog(n)'}/>O(nlog(n))
+                    on:click={select} checked={selected === 'nlog(n)'}/><Katex>O(nlog(n))</Katex>
             </label>
+            </div>
+            <div>
             <label>
                 <input type="checkbox" 
                     class="radio" 
                     value="nx" 
                     name="status"
-                    on:click={select} checked={selected === 'nx'}/>O(n^x)
+                    on:click={select} checked={selected === 'nx'}/><Katex>O(n^x)</Katex>
             </label> 
             <label>
                 <input type="checkbox" 
                     class="radio" 
                     value="xn" 
                     name="status"
-                    on:click={select} checked={selected === 'xn'}/>O(x^n)
+                    on:click={select} checked={selected === 'xn'}/><Katex>O(x^n)</Katex>
             </label>
             <label>
                 <input type="checkbox" 
                     class="radio" 
                     value="n!" 
                     name="status"
-                    on:click={select} checked={selected === 'n!'}/>O(n!)
+                    on:click={select} checked={selected === 'n!'}/><Katex>O(n!)</Katex>
             </label>
+            </div>
             <div>
             <button on:click={revealAnswer}>{answerText}</button>
             {#if showAnswer}
