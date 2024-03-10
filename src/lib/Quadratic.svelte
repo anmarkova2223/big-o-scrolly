@@ -64,7 +64,10 @@
 
   .donut-container {
       position: relative;
-  }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
 
   .speech-bubble {
@@ -99,18 +102,6 @@
       margin-left: 20px;
   }
 
-  .speech-bubble::before {
-      content: '';
-      position: absolute;
-      top: 150%;
-      left: 46%;
-      margin-top: -10px;
-      border-width: 10px;
-      border-style: solid;
-      border-color: transparent transparent transparent #CCCCCC;
-      transform: rotate(90deg);
-  }
-
 
 </style>
 <main class="container">
@@ -120,7 +111,7 @@
  
   <div class="donut-container">
       <img src={donutThinkRight} alt="Donut Image" style="width: 100px; margin-top: 70px;">
-      <div class="speech-bubble" style="top: 30px;">
+      <div class="speech-bubble" style="top: 30px; width: 300px;">
           Let's look at some examples.
       </div>
   </div>

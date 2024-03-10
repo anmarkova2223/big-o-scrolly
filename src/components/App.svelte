@@ -192,7 +192,7 @@
         </div>
       {:else if index === 8}
         <div class="box_content">
-          Quadratic
+          <Quadratic />
         </div>
       {:else if index === 9}
         <div class="box_content">
