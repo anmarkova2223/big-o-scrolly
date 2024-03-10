@@ -63,6 +63,18 @@
     button {
       transform: translateX(var(--button-translate)) rotate(-90deg);
     }
+
+    button {
+        font-size: 12px;
+        background-color: #fa96e1;
+        border-radius: 10px;
+        padding: 3px 7px;
+        box-shadow: none;
+        border-color: none;
+    }
+    button:hover {
+        color: #ffffff;
+    }
   
     #sidebar-content {
       padding: 20px;

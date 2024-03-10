@@ -103,7 +103,7 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
 <main>
     <div class="practice">
         <h2>Problem 3</h2>
-        <div class="practice question">
+        <div class="practice question" style="display:flex;">
         <pre>
             <code class="language-python">
             a = 0;

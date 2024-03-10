@@ -34,7 +34,6 @@
 
 <style>
   .container {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +79,7 @@
     <p>Select which time complexity best describes the given code.</p>
     <br>
     {#if currentQuestion === 1}
-    <Question1 />
+        <Question1 />
     {:else if currentQuestion === 2}
         <Question2 />
     {:else if currentQuestion === 3}
