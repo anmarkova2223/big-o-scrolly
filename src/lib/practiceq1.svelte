@@ -116,7 +116,7 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
             </code>
         </pre>
         <div class="answer-choices">
-            <h4>Answer Choices</h4>
+            <h4>Select Answer From The Following Choices</h4>
             <div class="radio-boxes">
             <input type="checkbox" 
                     class="radio" 
