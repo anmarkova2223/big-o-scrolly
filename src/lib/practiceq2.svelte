@@ -8,7 +8,7 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
 
     let selected = '';
     let showAnswer = false;
-    let correctAnswer = 'n';
+    let correctAnswer = 'nlog(n)';
     let answerText = 'Reveal Answer';
     function select(event) {
         selected = event.target.value;
@@ -24,7 +24,7 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
 <style>
     .practice.question {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
   }
   .answer-choices {
@@ -66,18 +66,14 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
 </style>
 <main>
     <div class="practice">
-        <h2>Problem 1</h2>
+        <h2>Problem 2</h2>
         <div class="practice question">
         <pre>
             <code class="language-python">
-            def funct(n):
-            if (n==1):
-                return
-            for i in range(1, n+1):
-                for j in range(1, n + 1):
-                    print("*", end = "")
-                    break
-                print()
+            k = 0;
+            for i in range(n//2,n):
+                for j in range(2,n,pow(2,j)):
+                    k = k + n / 2;
             </code>
         </pre>
         <div class="answer-choices">
@@ -109,7 +105,7 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
                     value="nlog(n)" 
                     name="status"
                     on:click={select} checked={selected === 'nlog(n)'}/>O(nlog(n))
-            </label>
+            </label> 
             <label>
                 <input type="checkbox" 
                     class="radio" 
@@ -130,14 +126,18 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
                     value="n!" 
                     name="status"
                     on:click={select} checked={selected === 'n!'}/>O(n!)
-            </label>
+            </label>  
             <div>
             <button on:click={revealAnswer}>{answerText}</button>
             {#if showAnswer}
                 <p class="answer check {selected === correctAnswer ? 'correct' : 'incorrect'}">{selected === correctAnswer ? 'Correct answer!' : 'Incorrect answer.'}</p>
-                <p class="answer explanation"> Notice that even though the inner loop is bounded 
-                    by n, it is only executed once due to the break statement. Hence, 
-                    the time complexity of this algorithm is O(n).</p>
+                <p class="answer explanation"> If you notice, j keeps doubling till it is less than or equal to n. Several times, we can double a number till it is less than n would be log(n). 
+                    Let’s take the examples here. 
+                    for n = 16, j = 2, 4, 8, 16 
+                    for n = 32, j = 2, 4, 8, 16, 32 
+                    So, j would run for O(log n) steps. 
+                    i runs for n/2 steps. 
+                    So, total steps = O(n/ 2 * log (n)) = O(n * log n)</p>
             {/if}
             </div>
         </div>

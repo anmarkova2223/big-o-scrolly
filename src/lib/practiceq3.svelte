@@ -8,7 +8,7 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
 
     let selected = '';
     let showAnswer = false;
-    let correctAnswer = 'n';
+    let correctAnswer = 'nx';
     let answerText = 'Reveal Answer';
     function select(event) {
         selected = event.target.value;
@@ -24,7 +24,7 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
 <style>
     .practice.question {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
   }
   .answer-choices {
@@ -66,18 +66,14 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
 </style>
 <main>
     <div class="practice">
-        <h2>Problem 1</h2>
+        <h2>Problem 3</h2>
         <div class="practice question">
         <pre>
             <code class="language-python">
-            def funct(n):
-            if (n==1):
-                return
-            for i in range(1, n+1):
-                for j in range(1, n + 1):
-                    print("*", end = "")
-                    break
-                print()
+            a = 0;
+            for i in range(N):
+                for j in reversed(range(i,N)):
+                a = a + i + j;                
             </code>
         </pre>
         <div class="answer-choices">
@@ -135,9 +131,12 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
             <button on:click={revealAnswer}>{answerText}</button>
             {#if showAnswer}
                 <p class="answer check {selected === correctAnswer ? 'correct' : 'incorrect'}">{selected === correctAnswer ? 'Correct answer!' : 'Incorrect answer.'}</p>
-                <p class="answer explanation"> Notice that even though the inner loop is bounded 
-                    by n, it is only executed once due to the break statement. Hence, 
-                    the time complexity of this algorithm is O(n).</p>
+                <p class="answer explanation"> The above code runs total no of times 
+                    = N + (N – 1) + (N – 2) + … 1 + 0 
+                    = N * (N + 1) / 2 
+                    = 1/2 * N^2 + 1/2 * N 
+                    O(N^2) times.
+                    </p>
             {/if}
             </div>
         </div>

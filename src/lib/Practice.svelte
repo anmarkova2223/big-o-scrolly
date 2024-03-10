@@ -4,20 +4,31 @@
     //import cheatsheet from './cheatsheet.js';
     import donutHype from '../lib/donut-hype-eyes-open.png';
     import { goto } from '$app/navigation';
+    import Question1 from './practiceq1.svelte';
+    import Question2 from './practiceq2.svelte';
+    import Question3 from './practiceq3.svelte';
 
     import Katex from 'svelte-katex';
     import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
 
-    let selected = '';
-    let showAnswer = false;
-    let correctAnswer = 'n';
-    let answerText = 'Reveal Answer';
-    function select(event) {
-        selected = event.target.value;
+    let currentQuestion = 1;
+
+    function nextQuestion() {
+        if (currentQuestion < 3) {
+        currentQuestion += 1;
+        }
+        else if (currentQuestion >=  3) {
+            currentQuestion = 1;
+        }
     }
-    function revealAnswer() {
-        showAnswer = !showAnswer;
-        answerText = showAnswer ? 'Hide Answer' : 'Reveal Answer';
+
+    function prevQuestion() {
+        if (currentQuestion > 1) {
+        currentQuestion -= 1;
+        }
+        else if (currentQuestion <=  1) {
+            currentQuestion = 3;
+        }
     }
 </script>
 
@@ -30,38 +41,13 @@
     text-align: center;
     padding: 0 100px;
     height: 100%; /* Ensure the container takes up the full height */
-  }
-
-  .practice.question {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .answer-choices {
-    margin-left: 20px;
-    text-align: left;
-    width: 400px;
-  }
-  .correct {
-    color: green;
-  }
-  .incorrect {
-    color:red;
-  }
-
-    /* Adjust the pre element styles if needed */
-    pre {
-        margin: 0;
-        padding: 20px;
-        background-color: #f4f4f4;
-        border-radius: 5px;
-        overflow-x: auto;
-        display: flex;
-        justify-content: center;
     }
-
-    pre code {
-        text-align: left; /* Ensure code is left-aligned */
+    .buttons {
+        display: flex;
+        top: 450px;
+        position: absolute;
+        align-items: center;
+        flex-direction: row;
     }
 
     :global(.katex) {
@@ -77,63 +63,16 @@
 <main class="container">
     <h1>Practice Questions</h1>
     <p>Select wich time complexity best </p>
-    
     <br>
-    <div class="practice">
-    <h2>Problem 1</h2>
-    <div class="practice question">
-    <pre>
-        <code class="language-python">
-        def funct(n):
-        if (n==1):
-            return
-        for i in range(1, n+1):
-            for j in range(1, n + 1):
-                print("*", end = "")
-                break
-            print()
-        </code>
-    </pre>
-    <div class="answer-choices">
-        <h3>Answer Choices</h3>
-        <label>
-          <input type="checkbox" 
-                class="radio" 
-                value="1" 
-                name="status" 
-                on:click={select} checked={selected === '1'}/>O(1)
-        </label>
-        <label>
-          <input type="checkbox" 
-            class="radio" 
-            value="logn" 
-            name="status"
-            on:click={select} checked={selected === 'logn'}/>O(log(n))
-        </label>
-        <label>
-            <input type="checkbox" 
-                class="radio" 
-                value="n" 
-                name="status"
-                on:click={select} checked={selected === 'n'}/>O(n)
-        </label>
-        <label>
-            <input type="checkbox" 
-                class="radio" 
-                value="nlog(n)" 
-                name="status"
-                on:click={select} checked={selected === 'nlog(n)'}/>O(nlog(n))
-        </label> 
-        <div>
-        <button on:click={revealAnswer}>{answerText}</button>
-        {#if showAnswer}
-            <p class="answer check {selected === correctAnswer ? 'correct' : 'incorrect'}">{selected === correctAnswer ? 'Correct answer!' : 'Incorrect answer.'}</p>
-            <p class="answer explanation"> Notice that even though the inner loop is bounded 
-                by n, it is only executed once due to the break statement. Hence, 
-                the time complexity of this algorithm is O(n).</p>
-        {/if}
-        </div>
-    </div>
-    </div>
+    {#if currentQuestion === 1}
+    <Question1 />
+    {:else if currentQuestion === 2}
+        <Question2 />
+    {:else if currentQuestion === 3}
+        <Question3 />
+    {/if}
+    <div class="buttons">
+        <button on:click={prevQuestion}>Previous</button>
+        <button on:click={nextQuestion}>Next</button>
     </div>
 </main>
