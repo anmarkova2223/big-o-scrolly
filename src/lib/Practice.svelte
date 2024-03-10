@@ -44,10 +44,21 @@
     }
     .buttons {
         display: flex;
-        top: 450px;
+        top: 490px;
+        width: 980px;
         position: absolute;
         align-items: center;
+        justify-content: space-between;
         flex-direction: row;
+        margin-inline: 10px;
+    }
+    .button {
+        font-size: 15px;
+        background-color: #fa96e1;
+        border-radius: 10px;
+        padding: 5px 10px;
+        box-shadow: none;
+        border-color: none;
     }
 
     :global(.katex) {
@@ -72,7 +83,7 @@
         <Question3 />
     {/if}
     <div class="buttons">
-        <button on:click={prevQuestion}>Previous</button>
-        <button on:click={nextQuestion}>Next</button>
+        <button class="button" on:click={prevQuestion}>Previous</button>
+        <button class="button" on:click={nextQuestion}>Next</button>
     </div>
 </main>
