@@ -118,13 +118,17 @@
             What a great observation! As long as coefficients are positive multiples of <Katex>n</Katex> then the exponentials have a greater time complexity.
         </div>
     </div>    
-    <p>Lets look at some more examples on how we can calculate exponential time.</p>
+    <h4>Lets look at another example of how we can calculate exponential time.</h4>
     <pre>
       <code class="language-python">
 # Here is a very straightforward example of exponential time
+
 i = 1 #this is constant time
-while i &le 2**n: # This loop repeats everything inside 2**n times
+
+while i &lt 2**n: # This loop repeats everything inside 2**n times
+
   print(i) # this is constant time
+
   i += 1 # this is also constant time
       </code>
     </pre>
@@ -144,21 +148,22 @@ while i &le 2**n: # This loop repeats everything inside 2**n times
         </ul>
       <li>We can see as <Katex>n</Katex> increases the number of elements printed doubles each time (2, 4, 8)! This tells us that this loop runs with a time complexity of <Katex>O(2^n)</Katex>.</li>
     <br>
-    <p>Let's look at another example:</p>
+    <h4>How about another recursive example?</h4>
     <pre>
       <code class="language-python">
-# Here is a recursive example
 def exponential(n):
-  if n &le 0:
+
+  if n &lt 0:
+
     return 1 #This is constant!
+
   else:
-        return exponential(n - 1) + exponential (n - 1) # This shrinks n one at a time
+
+    return exponential(n - 1) + exponential (n - 1) # This shrinks n one at a time
       </code>
     </pre>
     <p>You've seen the mathematical way to solving recursion, so let's try another way that may be more intuitive to others. Just like the mathematical way we start by...</p>
-    <ol>
-      <li>"Unroll" several times to find a pattern.</li>
-      <ul>
+    <ul>
         <li>For <Katex>n = 1</Katex> the code will do: <code>exponential(1 - 1) + exponential(1 - 1)</code>, which becomes <code>exponential(0) + exponential(0)</code></li>
         <li>For <Katex>n = 2</Katex> the code will do: <code>exponential(2 - 1) + exponential(2 - 1)</code>, which becomes <code>exponential(1) + exponential(1)</code></li>
         <ul>
@@ -166,16 +171,12 @@ def exponential(n):
         </ul>
         <li>For <Katex>n = 3</Katex> the code will do: <code>exponential(3 - 1) + exponential(3 - 1)</code>, which becomes <code>exponential(2) + exponential(2)</code></li>
         <ul>
-          <li>Then it will be: <code>exponential(1) + exponential(1) + exponential(1) + exponential(1)</code>, which becomes exponential(0) + exponential(0) + exponential(0) + exponential(0) + exponential(0) + exponential(0) + exponential(0) + exponential(0)<code></code></li>
+          <li>Then it will be: <code>exponential(1) + exponential(1) + exponential(1) + exponential(1)</code>, which becomes <code>exponential(0) + exponential(0) + exponential(0) + exponential(0) + exponential(0) + exponential(0) + exponential(0) + exponential(0)</code></li>
         </ul>
-      </ul>
-      <li>Write a general formula for the <Katex>kth</Katex> unroll.</li>
-      <ul>
         <li>We see that the number of <code>exponential(0)</code> seems to double each time! This means we can say the general equation for this problem is <Katex>2^n</Katex>. This means that the time complexity is <Katex>O(n^2)</Katex>.</li>
       </ul>
-    </ol>
-    <br>
     <p>As you can see exponential time is quite slow. You want to avoid creating algorithms that run in this time, as very little data will take a long time.</p>
+    <br>
     <!-- <p style="text-align: center;">Great work! Click on the donut to go back to the home page!</p>
     <img src={donutHypeClosed} alt="Donut Image" style="width: 150px;display: block; margin-left: auto; margin-right: auto;" on:click={handleDonutClick}> -->
 </main>

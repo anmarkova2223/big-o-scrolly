@@ -101,12 +101,13 @@
 
   <!-- <p>Now you might be wondering, "What's the big deal about quasilinear time complexity? It can't be that different from linear or even logarithmic time, right?"</p> -->
   <p>Some common algorithms that are <Katex>O(n \space \log(n))</Katex> are merge sort, heap sort, divide and conquer algorithms like Karatsuba multiplication or Stassen's algorithm for matrix multiplication, and operations on a self-balancing binary search tree.</p>
-  <div class="donut-container">
+  <!-- <div class="donut-container">
     <img src={donutWaveLeft} alt="Donut Image" style="width: 100px; margin-top: 70px;">
     <div class="speech-bubble" style="top: 30px; width: 300px;">
         Wow! there are so many things in quasilinear time!
     </div>
-</div>
+</div> -->
+<h4>Verbal Example:</h4>
   <p>Imagine Big O is sorting a large list of elements using an efficient sorting algorithm like quicksort. Quicksort has an average-case time complexity of <Katex>O(n \space \log n)</Katex>. Now, you might think, "That's not too bad. It's better than quadratic time!"</p>
  
   <p>But wait, there's more to consider. As you may have gathered, quasilinear time complexity grows slightly faster than linear time. Let's see how this can impact Big O's performance.</p>
@@ -134,7 +135,7 @@
   <p>As you can see, the time required doubles when the input size doubles. This slight increase in time can become significant for larger inputs, making the running time worse.
   </p>
   
-  <h2 style="text-align: center;">Example:</h2>
+  <h4>Code Example:</h4>
   <pre>
       <code class="language-python">
         def quasilinear_example(input_list):

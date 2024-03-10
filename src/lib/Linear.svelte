@@ -109,7 +109,7 @@
     <p>In other words, the run time will linearly increase based on the length of the input.</p>
  
  
-    <h2 style="text-align: center;">Examples</h2>
+    <h4 style="text-align: center;">Examples of Python Functions in Linear Time</h4>
  
  
     <p>The time complexity of any command or method that involves checking the length of a list, tuple, string, or any Python object is <Katex>O(n)</Katex>.</p>
@@ -146,7 +146,7 @@ count(a) # counting occurrences of a certain element in, say, a list also takes 
     </pre>
  
  
-    <p>Here is a simple example of code that runs in linear time!</p>
+    <h4>Here is a simple example of code that runs in linear time!</h4>
     <pre>
         <code class="language-python">
 def example(input_list):
