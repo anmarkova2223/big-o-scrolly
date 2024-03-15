@@ -63,6 +63,18 @@
     button {
       transform: translateX(var(--button-translate)) rotate(-90deg);
     }
+
+    button {
+        font-size: 12px;
+        background-color: #fa96e1;
+        border-radius: 10px;
+        padding: 3px 7px;
+        box-shadow: none;
+        border-color: none;
+    }
+    button:hover {
+        color: #ffffff;
+    }
   
     #sidebar-content {
       padding: 20px;
@@ -80,6 +92,7 @@
     <nav transition:fly={{x: 250, opacity: 1}}>
       <div id="sidebar-content"></div>
       <div class="graph-text" style="margin-top: -80px; text-align: left; font-size: 13px;padding: 20px;">
+        <p>You can hover the lines above just like in the graph section of our explanation!</p>
         <h4 style="font-size: 15px;">Rules to Big O Notation</h4>
         <ol>
           <li>Break your algorithm/code into individual operations.</li>
@@ -91,7 +104,7 @@
         <br>
         <h4 style="font-size: 15px;">Things to Keep in Mind</h4>
         <li>We care about <Katex>n</Katex> as it gets bigger and bigger. So assume it is approaching infinity.</li>
-        <li>Sometimes it is OK to multiply different Big O's together for an algorithm. Always double check to make sure it is appropriate. (If they are loops do any of them end early?)</li>
+        <li>Sometimes it is OK to multiply different Big O's together for an algorithm. Always double check to make sure it is appropriate. (If there are loops do any of them end early?)</li>
       </div>
     </nav>
     <Modal />

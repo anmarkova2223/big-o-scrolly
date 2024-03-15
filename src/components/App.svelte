@@ -6,12 +6,14 @@
   import Sources from '../lib/Sources.svelte';
   import Graph from '../lib/Graph.svelte';
   import Intro from '../lib/Intro.svelte';
-  //import Exponential from '../lib/Exponential.svelte';
-  //import Linear from '../lib/Linear.svelte';
-  //import Quadratic from '../lib/Quadratic.svelte';
-  //import Quasilinear from '../lib/Quasilinear.svelte';
-  //import Factorial from '../lib/Factorial.svelte';
-  //import Logarithmic from '../lib/Logarithmic.svelte';
+  import Exponential from '../lib/Exponential.svelte';
+  import Linear from '../lib/Linear.svelte';
+  import Factorial from '../lib/Factorial.svelte';
+  import Logarithmic from '../lib/Logarithmic.svelte';
+  import Quadratic from '../lib/Quadratic.svelte';
+  import Quasilinear from '../lib/Quasilinear.svelte';
+
+  import Practice from '../lib/Practice.svelte';
 
   import donutWave from '../lib/donut-wave.png';
   import donutWaveLeft from '../lib/donut-wave-left.png';
@@ -33,7 +35,6 @@
   import Sidebar from './Sidebar.svelte';
   let sidebar_show = false;
   let circles = ["Welcome", "Explanation", "The How", "Graph", "Constant", "Logarithmic", "Linear", "Quasilinear", "Quadratic", "Exponential", "Factorial", "Practice", undefined];
-  console.log(circles)
 
   let donutTexts = [
     "Explanation",
@@ -95,7 +96,7 @@
       const boxTop = box.getBoundingClientRect().top;
       const boxBottom = box.getBoundingClientRect().top 
       + box.getBoundingClientRect().height;
-      console.log(boxTop);
+      //console.log(boxTop);
       if (boxTop < triggerBottom && boxBottom > triggerBottom/2) {
         boxAppears[index] = true;
       } else {
@@ -204,7 +205,7 @@
         </div>
       {:else if index === 11}
         <div class="box_content">
-          Practice
+          <Practice />
         </div>
       {:else if index === 12}
       <div class="box_content">
