@@ -14,9 +14,12 @@
 
   console.log('Quasilinear.svelte loaded');
 
+  import { onMount } from 'svelte';
+  import { plotNLogNLine } from './nlognGraph.js';
 
-  // import Sidebar from './Sidebar.svelte';
-  // let sidebar_show = false;
+  onMount(() => {
+    plotNLogNLine('graph3', 'Quasilinear Time', 'Not so Goldilocks!');
+    });
 </script>
 
 
@@ -92,12 +95,21 @@
       white-space: normal;
       transform: translateY(-50%);
   }
+
+  #graph3 {
+    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+  }
 </style>
 
 
 <main class="container">
   <h1 style="text-align: center;">Quasilinear Time</h1>
   <p>More complex than <Katex>O(n)</Katex>, but less complex than <Katex>O(n^2)</Katex>.</p>
+  <br>
+  <div id = "graph3"></div>
 
   <!-- <p>Now you might be wondering, "What's the big deal about quasilinear time complexity? It can't be that different from linear or even logarithmic time, right?"</p> -->
   <p>Some common algorithms that are <Katex>O(n \space \log(n))</Katex> are merge sort, heap sort, divide and conquer algorithms like Karatsuba multiplication or Stassen's algorithm for matrix multiplication, and operations on a self-balancing binary search tree.</p>
