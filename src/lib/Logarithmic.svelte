@@ -13,7 +13,7 @@
   import { plotOLogNLine } from './logGraph.js';
 
   onMount(() => {
-    plotOLogNLine('graph', 'Logarithmic Time', 'Slow but steady wins the race!');
+    plotOLogNLine('graph2', 'Logarithmic Time', 'Slow but steady!');
     });
 
 </script>
@@ -92,7 +92,7 @@
       transform: translateY(-50%);
   }
 
-  #graph {
+  #graph2 {
     transform: scale(1.2);
     display: flex;
     justify-content: center;
@@ -107,7 +107,7 @@
   <p>Imagine yourself on a journey through the realm of algorithms. As you delve deeper into the complexities of computational efficiency, you encounter a concept known as logarithmic time.</p>
   <p>When an algorithm operates in <Katex>O(\log n)</Katex> time complexity, it signifies a fascinating characteristic: as the input size grows, the number of operations required grows very slowly.</p>
   <br>
-  <div id = "graph"></div>
+  <div id = "graph2"></div>
   <p>Consider it akin to navigating through a vast library of books. With each doubling of the library's size, your search strategy evolves only incrementally. This is precisely the essence of logarithmic time.</p>
   <div class = "donut-container" style = "margin-top: 10">
     <img src={log} alt="Log Image" style="width: 120px; margin-top: 70px;">

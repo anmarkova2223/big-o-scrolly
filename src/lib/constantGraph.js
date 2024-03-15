@@ -1,7 +1,14 @@
 import * as d3 from "d3";
 
 export function plotO1Line(targetElementId, title, instruction) {
+
     const targetDiv = document.getElementById(targetElementId);
+
+    // Clear SVG element
+    while (targetDiv.firstChild) {
+        targetDiv.removeChild(targetDiv.firstChild);
+    }
+    
     const containerWidth = 400;
     const containerHeight = 200;
 
