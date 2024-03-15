@@ -103,7 +103,7 @@ export function plotOLogNLine(targetElementId, title, instruction) {
 
     const instructionText = svg.append("text")
         .attr("class", "instruction")
-        .attr("transform", `translate(${margin.left + innerWidth / 2},${margin.top + 2})`)
+        .attr("transform", `translate(${margin.left + innerWidth / 2},${margin.top + 7})`)
         .style("text-anchor", "middle")
         .style("font-style", "italic")
         .text(instruction);
