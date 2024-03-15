@@ -9,14 +9,12 @@
     import donutThink from '../lib/donut-think-left.png'
     import { goto } from '$app/navigation';
 
-      import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
+    import { onMount } from 'svelte';
+    import { plotTwoNLine } from './2nGraph.js';
 
-//     function handleDonutClick() {
-//     console.log("Back to homepage!")
-//     goto('homepage');
-//   }
-//   import Sidebar from './Sidebar.svelte';
-//   let sidebar_show = false;
+  onMount(() => {
+    plotTwoNLine('graph6', 'Exponential Time', 'Holy cow!');
+    });
 </script>
 
 <!-- <Sidebar bind:show={sidebar_show} /> -->
@@ -90,7 +88,12 @@
         text-align: left;
         margin-left: 20px; /* Adjust the space between bullet and text */
     }
-
+    #graph6 {
+    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+  }
 </style>
 
 <main class="container">
@@ -117,7 +120,7 @@
             <!-- adjust style as needed for placement -->
             What a great observation! As long as coefficients are positive multiples of <Katex>n</Katex> then the exponentials have a greater time complexity.
         </div>
-    </div>    
+    </div>
     <h4>Lets look at another example of how we can calculate exponential time.</h4>
     <pre>
       <code class="language-python">
@@ -147,7 +150,8 @@ while i &lt 2**n: # This loop repeats everything inside 2**n times
           <li>It will print <code>0, 1, 2, 3, 4, 5, 6, 7</code>.</li>
         </ul>
       <li>We can see as <Katex>n</Katex> increases the number of elements printed doubles each time (2, 4, 8)! This tells us that this loop runs with a time complexity of <Katex>O(2^n)</Katex>.</li>
-    <br>
+    <br><br>
+    <div id = "graph6"></div>
     <h4>How about another recursive example?</h4>
     <pre>
       <code class="language-python">
