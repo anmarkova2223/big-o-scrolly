@@ -27,14 +27,14 @@ export function plotOLogNLine(targetElementId, title, instruction) {
     const g = svg.append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    const plotSize = 500; // Adjusted plot size
+    const plotSize = 20; // Adjusted plot size
 
     const xScale = d3.scaleLinear()
         .domain([0, plotSize])
         .range([0, innerWidth]);
 
     const yScale = d3.scaleLinear()
-        .domain([0, Math.log(plotSize)]) // Adjusted domain
+        .domain([0, Math.log2(plotSize)]) // Adjusted domain
         .range([innerHeight, 0]);
 
     const xAxis = d3.axisBottom(xScale)
@@ -84,9 +84,9 @@ export function plotOLogNLine(targetElementId, title, instruction) {
             g.append("text") // Append text element on mouseover
                 .attr("class", "hover-text")
                 .attr("x", xScale(plotSize) - 10) // Adjust position relative to the line
-                .attr("y", yScale(Math.log(plotSize)) + 50) // Adjust position relative to the line
+                .attr("y", yScale(Math.log(plotSize)) + 60) // Adjust position relative to the line
                 .style("text-anchor", "end")
-                .text("Growing very slowly...");
+                .text("This is zoomed in!");
         })
         .on("mouseout", function() { // Add mouseout event handler
             d3.select(this).attr("stroke-width", 2); // Reset stroke width on mouseout
