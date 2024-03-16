@@ -26,7 +26,7 @@
       flex-direction: column;
       text-align: center;
       padding: 0 100px;
-      height: 100%; /* Ensure the container takes up the full height */
+      /* height: 100%; Ensure the container takes up the full height */
     }
   
     /* Adjust the pre element styles if needed */

@@ -72,16 +72,13 @@
       <h1>What is Big O Notation?</h1>
       <p style="text-align: left;">Big O notation is a fundamental tool used to analyze the cost of an algorithm. It gives the upper-bound runtime or worst-case complexity of an algorithm. This allows one to classify algorithms depending on their run time or space requirements.</p>
       <p style="text-align: left;">Big O notation was invented by German mathematicians Paul Bachmann, Edmund Landau, and others. It is also called Bachmann-Landau notation or asymptotic notation. The letter <Katex>n</Katex> represents the input size (this can be the length of a list of a given integer). The letter <Katex>O</Katex> was chosen by Bachnmann to stand for Ordnung, which means the order of approximation.</p>
-      <h2>Here is the formal definition:</h2>
-      <p style="text-align: left;"><Katex>f(N) = O(g(N))</Katex> if there exists possible constants <Katex>c</Katex>, <Katex>N_{0}</Katex> such that <Katex>f(N) \leq c * g(N)</Katex> for all <Katex>N \geq N_{0}</Katex>.</p>
       <h2>Why is Big O Notation Important?</h2>
       <p style="text-align: left;">Big O Notation is essential if you want to know how algorithms will scale. For example, if you are designing a big website and have a lot of users the time it takes to handle those requests are important. You need to know how to store all of this data efficiently, so when you write code it does not take a million years to run. Big O Notation gives you a high level idea of which algorithms are fast or slow and the tradeoffs.</p>
-      <h2>Fun fact!</h2>
-      <p>Big O is modeled after Edmund Landau! This picture of Landau is from Wikipedia.</p>
       <div style="display: flex; justify-content: center;">
+        <h3 style="width: 100px">Fun fact!</h3>
+      <p>Big O is modeled after Edmund Landau! This picture of Landau is from Wikipedia.</p>
         <div style="display: flex; flex-direction: row; align-items: center;">
-            <img src={edmund} alt="Picture of Edmund Landau From Wikipedia" style="margin-right: 20px;">
-            <img src={donutWaveLeft} alt="Donut Image" style="width: 400px;">
+            <img src={edmund} alt="Picture of Edmund Landau From Wikipedia" style="margin-right: 20px; width:100px;">
         </div>
     </div>
   </main>

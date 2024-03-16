@@ -16,15 +16,15 @@ export function funTable(targetElementId) {
     const svgContainer = d3.select(`#${targetElementId}`);
 
     // Define SVG container dimensions
-    const containerWidth = 900; // New width
-    const containerHeight = 600; // New height
+    const containerWidth = 450; // New width
+    const containerHeight = 500; // New height
 
     // Update SVG container dimensions
     svgContainer.attr("width", containerWidth)
                 .attr("height", containerHeight);
 
     // Keep inner dimensions unchanged
-    const margin = { top: 1000, right: 50, bottom: 50, left: 50};
+    const margin = { top: 0, right: 0, bottom: 0, left: 0};
     const width = containerWidth - margin.left - margin.right;
     const height = containerHeight - margin.top - margin.bottom;
 

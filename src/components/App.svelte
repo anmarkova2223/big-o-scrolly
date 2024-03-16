@@ -12,6 +12,11 @@
   import Logarithmic from '../lib/Logarithmic.svelte';
   import Quadratic from '../lib/Quadratic.svelte';
   import Quasilinear from '../lib/Quasilinear.svelte';
+  import Step1 from '../lib/Steps/Step1.svelte';
+  import Step2 from '../lib/Steps/Step2.svelte';
+  import Step3 from '../lib/Steps/Step3.svelte';
+  import Step4 from '../lib/Steps/Step4.svelte';
+  import Donuts from './Donuts.svelte';
 
   import Practice from '../lib/Practice.svelte';
 
@@ -34,19 +39,16 @@
 
   import Sidebar from './Sidebar.svelte';
   let sidebar_show = false;
-  let circles = ["Welcome", "Explanation", "The How", "Graph", "Constant", "Logarithmic", "Linear", "Quasilinear", "Quadratic", "Exponential", "Factorial", "Practice", undefined];
+  let circles = ["Welcome", "Explanation","The How","", "Graph", "Overview", "Practice", undefined];
 
   let donutTexts = [
     "Explanation",
     "The How",
+    "The How",
+    "The How",
+    "The How",
     "Graph & Table",
-    "Constant",
-    "Logarithmic",
-    "Linear",
-    "Quasilinear",
-    "Quadratic",
-    "Exponential",
-    "Factorial",
+    "Time Complexities",
     "Practice",
     "Sources"
   ]
@@ -62,9 +64,9 @@
     { src: nlognDonut,label: donutTexts[6], top: 800, left: 35, width: 180 },
     { src: quadraticDonut,label: donutTexts[7], top: 900, left: 35, width: 180 },
     { src: exponentialDonut,label: donutTexts[8], top: 1000, left: 35, width: 180 },
-    { src: factorialDonut,label: donutTexts[9], top: 1100, left: 35, width: 180 },
-    { src: donutThinkRight,label: donutTexts[10], top: 1200, left: 35, width: 130 },
-    { src: donutWaveLeft,label: donutTexts[11], top: 1300, left: 35, width: 140 }
+    // { src: factorialDonut,label: donutTexts[9], top: 1100, left: 35, width: 180 },
+    // { src: donutThinkRight,label: donutTexts[10], top: 1200, left: 35, width: 130 },
+    // { src: donutWaveLeft,label: donutTexts[11], top: 1300, left: 35, width: 140 }
   ];
 
 
@@ -80,7 +82,7 @@
     donuts[index].clicked = true;
   }
   let boxes;
-  let boxAppears = [true, false, false, false, false, false, false, false, false, false, false, false, false];
+  let boxAppears = [true, false, false, false, false, false, false];
 
   onMount(() => {
     // Write your code here
@@ -130,13 +132,9 @@
   {#each donuts as { src, label, top, left, width, hovered, clicked }, index}
   <div class="donut-container" style={`top: ${top}px; left: ${left}px;`}>
     <img class="donut" src={src} alt="Donut" style={`width: ${width}px`}/>
-    {#if index === 1 || index === 11 || index === 12}
+    {#if index === 1}
       {#if index === 1}
         <div class="label_short" style={`left: 30px`}>{label}</div>
-      {:else if index === 11}
-        <div class="label_short" style={`left: 40px`}>{label}</div>
-      {:else}
-        <div class="label_short" style={`left: 44px`}>{label}</div>
       {/if}
       <!-- <div class="label_short" style={`left: px`}>{label}</div> -->
     {:else}
@@ -169,45 +167,33 @@
         </div>
       {:else if index === 2}
         <div class="box_content">
-          <Tips />
+          <Step1 />
         </div>
       {:else if index === 3}
         <div class="box_content">
-          <Graph />
+          <Step2 />
         </div>
       {:else if index === 4}
         <div class="box_content">
-          <Constant />
+          <Step3 />
         </div>
         {:else if index === 5}
         <div class="box_content">
-          <Logarithmic />
+          <Step4 />
         </div>
       {:else if index === 6}
         <div class="box_content">
-          <Linear />
+          <Graph />
         </div>
       {:else if index === 7}
         <div class="box_content">
-          <Quasilinear />
+          <Donuts />
         </div>
       {:else if index === 8}
         <div class="box_content">
-          <Quadratic />
-        </div>
-      {:else if index === 9}
-        <div class="box_content">
-          <Exponential />
-        </div>
-      {:else if index === 10}
-        <div class="box_content">
-          <Factorial />
-        </div>
-      {:else if index === 11}
-        <div class="box_content">
           <Practice />
         </div>
-      {:else if index === 12}
+      {:else if index === 9}
       <div class="box_content">
         <Sources />
       </div>
@@ -315,9 +301,9 @@
     background-color: ffffff ;
     opacity: 0;
     transition: opacity 500ms ease-in;
-    overflow-y: auto;
-    box-shadow: -1px 10px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    overflow-y: scroll;
+    /* box-shadow: -1px 10px 10px rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; */
     /* display: flex;
     align-items: center;
     justify-content: center; */

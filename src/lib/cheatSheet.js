@@ -5,8 +5,8 @@ export function plotComplexities(targetElementId, title, instruction) {
     const targetDiv = document.getElementById(targetElementId);
 
     // Define SVG container dimensions
-    const containerWidth = 900; // New width
-    const containerHeight = 700; // New height
+    const containerWidth = 450; // New width
+    const containerHeight = 400; // New height
 
     // Update SVG container dimensions
     const svg = d3.select(targetDiv)
@@ -23,8 +23,8 @@ export function plotComplexities(targetElementId, title, instruction) {
     //   .attr("fill", "#CCCCCC"); // Adjust the fill color as desired
 
     // Keep inner dimensions unchanged
-    const width = 800; // Inner width
-    const height = 600; // Inner height
+    const width = 450; // Inner width
+    const height = 400; // Inner height
     const margin = { top: 128, right: 50, bottom: 50, left: 100 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
@@ -205,7 +205,7 @@ export function plotComplexities(targetElementId, title, instruction) {
       .attr("clip-path", "url(#clip)");
 
     const oNLogNLabelRect = g.append("rect")
-      .attr("x", 240)
+      .attr("x", 120)
       .attr("y", -25)
       .attr("width", 80) // Adjust width here
       .attr("height", 20) // Adjust height here
@@ -213,7 +213,7 @@ export function plotComplexities(targetElementId, title, instruction) {
       .attr("opacity", 0); // Initially invisible
 
     const oNLogNLabel = g.append("text")
-      .attr("x", 248)
+      .attr("x", 128)
       .attr("y", -10)
       .text("O(n log n)")
       .attr("fill", "black");
@@ -232,16 +232,16 @@ export function plotComplexities(targetElementId, title, instruction) {
       .attr("clip-path", "url(#clip)");
 
     const oNSquaredLabelRect = g.append("rect")
-      .attr("x", 138)
-      .attr("y", -25)
+      .attr("x", 65)
+      .attr("y", -5)
       .attr("width", 50) // Adjust width here
       .attr("height", 20) // Adjust height here
       .attr("fill", "#CC0000")
       .attr("opacity", 0); // Initially invisible
 
     const oNSquaredLabel = g.append("text")
-      .attr("x", 140)
-      .attr("y", -10)
+      .attr("x", 65)
+      .attr("y",10)
       .text("O(n^2)")
       .attr("fill", "black");
 
@@ -259,16 +259,16 @@ export function plotComplexities(targetElementId, title, instruction) {
       .attr("clip-path", "url(#clip)");
 
     const oTwoNLabelRect = g.append("rect")
-      .attr("x", 88)
-      .attr("y", -25)
+      .attr("x", 50)
+      .attr("y", -30)
       .attr("width", 50) // Adjust width here
       .attr("height", 20) // Adjust height here
       .attr("fill", "#CC0000")
       .attr("opacity", 0); // Initially invisible
 
     const oTwoNLabel = g.append("text")
-      .attr("x", 90)
-      .attr("y", -10)
+      .attr("x", 50)
+      .attr("y", -15)
       .text("O(2^n)")
       .attr("fill", "black");
 
@@ -286,7 +286,7 @@ export function plotComplexities(targetElementId, title, instruction) {
       .attr("clip-path", "url(#clip)");
 
     const oNFactorialLabelRect = g.append("rect")
-      .attr("x", 45)
+      .attr("x", 5)
       .attr("y", - 25)
       .attr("width", 45) // Adjust width here
       .attr("height", 20) // Adjust height here
@@ -294,7 +294,7 @@ export function plotComplexities(targetElementId, title, instruction) {
       .attr("opacity", 0); // Initially invisible
 
     const oNFactorialLabel = g.append("text")
-      .attr("x", 50)
+      .attr("x", 10)
       .attr("y", - 10)
       .text("O(n!)")
       .attr("fill", "black");

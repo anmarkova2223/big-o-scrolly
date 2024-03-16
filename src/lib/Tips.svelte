@@ -5,6 +5,10 @@
     import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
     import donutWaveLeft from '../lib/donut-wave-left.png';
     import { goto } from '$app/navigation';
+    import Step1 from '../lib/Steps/Step1.svelte';
+    import Step2 from '../lib/Steps/Step2.svelte';
+    import Step3 from './Steps/Step3.svelte';
+    import Step4 from './Steps/Step4.svelte';
   
     // function handleDonutClick() {
     //   // Navigate to the desired location when the donut image is clicked
@@ -66,11 +70,37 @@
         margin-left: 20px; /* Adjust the space between bullet and text */
     }
 
+    .button {
+        font-size: 15px;
+        background-color: #fa96e1;
+        border-radius: 10px;
+        padding: 5px 10px;
+        box-shadow: none;
+        border-color: none;
+    }
+    .button:hover {
+        color: #ffffff;
+    }
+
   </style>
     
   <main class="container">
-      <h1>How do you go about calculating Big O?</h1>
-      <h2>Big O Notation Rules:</h2>
+    <div>
+      <div>
+        <h1>How do you go about calculating Big O?</h1>
+        <h2>Big O Notation Rules:</h2>
+      </div>
+      <div>
+        <div>
+          <button class="button">Step 1</button>
+          <button class="button">Step 2</button>
+          <button class="button">Step 3</button>
+          <button class="button">Step 4</button>
+          <button class="button">Step 5</button>
+        </div>
+          <InteractiveTiming />
+      </div>
+    </div>
       <ol style="text-align: left;">
         <li>Break your algorithm/code into individual operations.</li>
         <li>Calculate the Big O of each operation.</li>

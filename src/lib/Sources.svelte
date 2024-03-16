@@ -18,15 +18,17 @@
     .container {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
-      text-align: center;
-      padding: 0 40px;
+      text-align: left;
+      padding: 120px 80px;
       height: 100%; /* Ensure the container takes up the full height */
+      font-size: 10px;
     }
   
   </style>
     
+
   <main class="container">
       <h1>Sources</h1>
       <p>We used a variety of sources to choose examples, provide accurate information, and to make our visualizations better.</p>
