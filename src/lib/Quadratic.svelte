@@ -10,14 +10,12 @@
   import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
 
 
-//   function handleDonutClick() {
-//   console.log("Back to homepage!")
-//   goto('homepage');
-// }
+  import { onMount } from 'svelte';
+  import { plotNSquaredLine } from './nSquaredGraph.js';
 
-
-// import Sidebar from './Sidebar.svelte';
-//   let sidebar_show = false;
+  onMount(() => {
+    plotNSquaredLine('graph5', 'Quadratic Time', 'Quite fast!');
+    });
 </script>
 
 
@@ -81,24 +79,32 @@
         text-align: left;
         padding-left: 0; /* Remove default padding */
     }
-  
-    ul ul {
-          list-style-type: circle; /* Change the bullet style for the nested list */
-          text-align: left;
-          margin-top: 5px; /* Adjust the spacing between the parent and nested lists */
-          margin-left: 40px;
-      }
-  
-    li {
+
+  ul ul {
+        list-style-type: circle; /* Change the bullet style for the nested list */
         text-align: left;
-        margin-left: 20px; /* Adjust the space between bullet and text */
+        margin-top: 5px; /* Adjust the spacing between the parent and nested lists */
+        margin-left: 40px;
     }
 
+  li {
+      text-align: left;
+      margin-left: 20px; /* Adjust the space between bullet and text */
+    }
+  
+  #graph5 {
+    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+  }
 </style>
 <main class="container">
     <h1>Quadratic Time</h1>
     <p>We classify quadratic time as very bad (yet it is not the worst)! This is because the complexity of polynomials increase as the exponent increases. AKA they are very slow. The notation for quadratic time is <Katex>O(n^2)</Katex>.</p>
     <p>But it is important to note just because we say it is bad does not mean it is never used.</p>
+    <br>
+    <div id = "graph5"></div>
     <p>Some common algorithms that have <Katex>O(n^2)</Katex> time complexity are insertion sort, Floyd-Warshall's algorithm (shortest paths between all pairs of vertices in a graph), naive algorithms with nested loops, and matrix multiplication.</p>
     <div class="donut-container">
         <img src={croissant} alt="Croissant Image" style="width: 130px; margin-top: 70px;">

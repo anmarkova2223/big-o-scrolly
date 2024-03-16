@@ -14,7 +14,7 @@
     console.log('Graph.svelte loaded');
   
     onMount(() => {
-        plotComplexities("big-o-graph", "Big O Complexity Visualization", "Try hovering over the lines!");
+        plotComplexities("big-o-graph", "Big O Complexity Visualization", "Try hovering over any lines on graphs!");
         funTable("fun-table");
     });
   </script>

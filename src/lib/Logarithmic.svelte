@@ -6,20 +6,16 @@
   import Katex from 'svelte-katex';
   import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
 
-
-  import donutWave from '../lib/donut-wave.png';
-  import { goto } from '$app/navigation';
   import log from '../lib/log-no-amber.png';
 
 
-  function handleDonutClick() {
-  console.log("Back to homepage!")
-  goto('homepage');
-}
+  import { onMount } from 'svelte';
+  import { plotOLogNLine } from './logGraph.js';
 
+  onMount(() => {
+    plotOLogNLine('graph2', 'Logarithmic Time', 'Slow but steady!');
+    });
 
-//   import Sidebar from './Sidebar.svelte';
-//   let sidebar_show = false;
 </script>
 
 
@@ -96,6 +92,13 @@
       transform: translateY(-50%);
   }
 
+  #graph2 {
+    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+  }
+
 </style>
 
 
@@ -103,6 +106,8 @@
   <h1>Logarithmic Time</h1>
   <p>Imagine yourself on a journey through the realm of algorithms. As you delve deeper into the complexities of computational efficiency, you encounter a concept known as logarithmic time.</p>
   <p>When an algorithm operates in <Katex>O(\log n)</Katex> time complexity, it signifies a fascinating characteristic: as the input size grows, the number of operations required grows very slowly.</p>
+  <br>
+  <div id = "graph2"></div>
   <p>Consider it akin to navigating through a vast library of books. With each doubling of the library's size, your search strategy evolves only incrementally. This is precisely the essence of logarithmic time.</p>
   <div class = "donut-container" style = "margin-top: 10">
     <img src={log} alt="Log Image" style="width: 120px; margin-top: 70px;">

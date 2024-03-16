@@ -13,18 +13,12 @@
   import donutHypeClosed from '../lib/donut-hype-eyes-closed.png';
   import { goto } from '$app/navigation';
 
+  import { onMount } from 'svelte';
+  import { plotNFactorialLine } from './factorialGraph.js';
 
-  import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
-
-
-//   function handleDonutClick() {
-//   console.log("Back to homepage!")
-// //   goto('homepage');
-// }
-
-
-// import Sidebar from './Sidebar.svelte';
-// let sidebar_show = false;
+  onMount(() => {
+    plotNFactorialLine('graph7', 'Factorial Time', 'Not even the website wants this...');
+    });
 </script>
 
 
@@ -110,6 +104,13 @@
       margin-left: 20px;
   }
 
+  #graph7 {
+    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+  }
+
 </style>
 
 
@@ -128,6 +129,8 @@
   <br>
   <p>For example, if the input list has 5 elements, the algorithm will perform 120 operations. If the input list has 10 elements, the algorithm will perform 3,628,800 operations. As the input size grows, the number of operations required grows at an astronomical rate!</p>
   <p><Katex>O(mg!)</Katex>. This is bad.</p>
+  <br>
+  <div id = "graph7"></div>
 
 
   <h4>Heap Permutations Code Example:</h4>

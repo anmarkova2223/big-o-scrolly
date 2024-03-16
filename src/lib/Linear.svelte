@@ -5,27 +5,14 @@
  
     import Katex from 'svelte-katex';
     import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
+
+    import { onMount } from 'svelte';
+    import { plotONLine } from './linearGraph.js';
  
- 
-    import donutHypeClosed from '../lib/donut-hype-eyes-closed.png';
-    import { goto } from '$app/navigation';
- 
- 
-      import 'katex/dist/katex.min.css'; //having this is what makes the math format nicely
- 
- 
-//     function handleDonutClick() {
-//     console.log("Back to homepage!")
-//     goto('homepage');
-//   }
- 
- 
-//     import Sidebar from './Sidebar.svelte';
-//     let sidebar_show = false;
+    onMount(() => {
+        plotONLine('graph4', 'Linear Time', 'Very common!');
+    });
  </script>
- 
- 
- <!-- <Sidebar bind:show={sidebar_show} /> -->
  
  
  <style>
@@ -96,7 +83,12 @@
         transform: rotate(90deg);
     }
  
- 
+    #graph4 {
+    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+  }
  </style>
  
  
@@ -107,6 +99,8 @@
     <p>An algorithm is said to have a linear time complexity when the running time increases linearly with the length of the input.</p>
     <p>When the function involves checking all the values in the input data we say it has a time complexity of <Katex>O(n)</Katex>.</p>
     <p>In other words, the run time will linearly increase based on the length of the input.</p>
+    <br>
+    <div id = "graph4"></div>
  
  
     <h4 style="text-align: center;">Examples of Python Functions in Linear Time</h4>

@@ -6,12 +6,16 @@
     import { goto } from '$app/navigation';
 
     import Katex from 'svelte-katex';
-    import 'katex/dist/katex.min.css'; //having this is what makes the math format nicel
+    import 'katex/dist/katex.min.css';
 
-    // function handleDonutClick() {
-    // console.log("Back to homepage!")
-    // goto('homepage');
-  //}
+
+    import { onMount } from 'svelte';
+    import { plotO1Line } from './constantGraph.js';
+
+-    onMount(() => {
+        plotO1Line('graph', 'Constant Time', 'A very boring, but good graph!');
+    });
+
 </script>
 
 <style>
@@ -83,12 +87,21 @@
       white-space: normal;
       transform: translateY(-50%);
   }
+
+  #graph {
+    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+  }
 </style>
 
 <main class="container">
     <h1>Constant Time</h1>
     <p>The easiest and best time complexity!</p>
     <p>When the algorithm is not dependent on the input size, it has constant time complexity <Katex>O(1)</Katex>. i.e., the runtime will always be the same regardless of the input size.</p>
+    <br>
+    <div id = "graph"></div>
     <p>Some common algorithms in constant time are: a stack's push, pop, peek, a queue's enque, deque, peek, a linked list's insertion or deletion, and a hash table's insertion, deletion, and retrievel (when there are no collisions).</p>
     <div class="donut-container">
         <img src={donutHype} alt="Donut Image" style="width: 100px; margin-top: 70px;">
