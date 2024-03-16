@@ -105,14 +105,14 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
         <div class="practice question">
         <pre>
             <code class="language-python">
-def funct(n):
-if (n==1):
-    return
-for i in range(1, n + 1):
-    for j in range(1, n + 1):
-        print("*", end = "")
-        break
-    print()
+def function(n):
+    if (n == 1):
+        return
+    for i in range(1, n + 1):
+        for j in range(1, n + 1):
+            print("*", end = "")
+            break
+        print()
             </code>
         </pre>
         <div class="answer-choices">

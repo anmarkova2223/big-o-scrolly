@@ -109,7 +109,7 @@ import donutHype from '../lib/donut-hype-eyes-open.png';
 a = 0;
 for i in range(N):
     for j in reversed(range(i,N)):
-    a = a + i + j;                
+        a = a + i + j;                
             </code>
         </pre>
         <div class="answer-choices">
