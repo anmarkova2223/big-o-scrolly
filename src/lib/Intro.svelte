@@ -70,6 +70,6 @@
     
   <main class="container">
     <h1>Welcome to Big O Notation by the Graphic Girls!</h1>
-    My name is Big O! I am an adorable donut representing Big O itself! <br><br>This webpage was made by Anastasiya Markova, Maryam Almahashnah, and Zoe Ludena. Any cute drawing you see on this website were drawn by Zoe! <br><br>I hope you are as excited as me to learn all about Big O Notation. This web page aims to teach you about the history of Big O notation, why it is relevant to you as a programmer, and how you can calculate it from other algorithms.
+    My name is Big O! I am an adorable donut representing Big O itself! <br><br>This webpage was made by Anastasiya Markova, Maryam Almahashnah, and Zoe Ludena. Any cute drawing you see on this website were drawn by Zoe! <br><br>I hope you are as excited as me to learn all about Big O Notation. This web page aims to teach you about the history of Big O notation, why it is relevant to you as a programmer, and how you can calculate it from other algorithms.<br><br><a href="https://youtu.be/3LJ-aV8AzLA">video</a>
   </main>
   
