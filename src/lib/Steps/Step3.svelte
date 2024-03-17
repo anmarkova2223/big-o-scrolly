@@ -189,7 +189,7 @@ function handleClick() {
             <p>Let's Plot our time complexity!</p>
             <p>We can now see a linear trend with respect to <Katex>n</Katex>. Remember that Big O is the worst case time complexity. In this case, the worst case is if n is approaching infinity, and as this happens the constants become less relevant.
             This allows us to disregard the constants when calculating Big O. You can click the button below to see what happends when we remove the constants. Notice that the first two bars seem to shift downwards, while the rest
-            seem to stay the same height. This is in fact not true, all bars decrease by two, but as <Katex>n</Katex> approaches infinity constant are less relevant so we can ignore them.</p>
+            seem to stay the same height. This is in fact not true; all bars decrease by two, but as <Katex>n</Katex> approaches infinity constant are less relevant so we can ignore them.</p>
             <p>Our Time Complexity: <Katex>{reset ? 'O(2n)' :'O(2n+1)'}</Katex></p>
             <button on:click={handleClick}>{reset ? 'Reset' : 'Remove Constants'}</button>
         </div>

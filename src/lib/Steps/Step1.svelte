@@ -94,9 +94,8 @@ def func(n):
         <div class="code text">
             <p>Here, we can break the code into the following operations:</p>
             <ol>
-                <li>Initialize the list: <code>lst = [1, 2, 3, 4, 5]</code></li>
                 <li>Initialize the variable <code>total</code> to 0</li>
-                <li>Iterate through the list and add each element to <code>total</code></li>
+                <li>Iterate through the range of the given value n and add each number to <code>total</code></li>
                 <li>Print the value of <code>total</code> after each addition</li>
             </ol>
         </div>

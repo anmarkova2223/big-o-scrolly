@@ -276,11 +276,11 @@
             <ul>
                 <li>Try checking different time complexities and adjusting the <Katex>C</Katex>. 
                 Can you tell what is Big O of this function?</li>
-                <li>You may notice that there are multiple function that fullfil <Katex>f(N) \leq c * g(N)</Katex> 
+                <li>You may notice that there are multiple functions that fullfil <Katex>f(N) \leq c * g(N)</Katex> 
                     for all <Katex>N \geq N_{0}</Katex>. We want to find the one that has the slowest rate of growth.</li>
                 <li>We can usually find a function <Katex>f(n)</Katex> by looking at the fastest growing term.</li>
                 <ul>
-                    <li>For example if our actual time complexity is described by <Katex>f(n)=n^2+n+3</Katex> then there exists a function <Katex>g(n)=c*n^2</Katex> for some <Katex>c</Katex> which is the upper bound, since <Katex>n^2</Katex> is the fasted growing term.</li>
+                    <li>For example if our actual time complexity is described by <Katex>f(n)=n^2+n+3</Katex> then there exists a function <Katex>g(n)=c*n^2</Katex> for some <Katex>c</Katex> which is the upper bound, since <Katex>n^2</Katex> is the fastest growing term.</li>
                 </ul>
             </ul>
         </div>

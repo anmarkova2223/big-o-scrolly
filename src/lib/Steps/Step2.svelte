@@ -90,7 +90,7 @@ def func(n):
             <ul>
                 <li>The blue lines compute only once.</li>
                 <li>In our case the blue lines all take <Katex>O(1)</Katex> time because the computer performs just one opration.</li>
-                <li>The red lines compute n times (Remember: n is the length of the list).</li>
+                <li>The red lines compute n times.</li>
                 <li>Each line inside the for loop takes <Katex>O(1)</Katex> and is performed n times. So the total time complexity for the for loop is <Katex>O((1+1)*n)=O(2n).</Katex></li>
                 <li>Combining the operations inside the for-loop and outside the for-loop, we get the total time complexity of <Katex>O(2n+1).</Katex></li>
             </ul>

@@ -123,19 +123,19 @@
   <pre>
       <code class="language-python">
           # this function is meant to recursively find the 
-            #largest element in an array, given a specific range between 'start' and 'end'
+          # largest element in an array, given a specific range between 'start' and 'end'
 
           def find_max_recursive(arr, start, end):
 
-          if start == end:
-              return arr[start]
+            if start == end:
+                return arr[start]
 
-          mid = (start + end) // 2
+            mid = (start + end) // 2
 
-          max_left = find_max_recursive(arr, start, mid)
-          max_right = find_max_recursive(arr, mid + 1, end)
+            max_left = find_max_recursive(arr, start, mid)
+            max_right = find_max_recursive(arr, mid + 1, end)
 
-          return max(max_left, max_right)
+            return max(max_left, max_right)
       </code>
   </pre>
 
@@ -146,8 +146,7 @@
 
   <p>At each recursive step, the algorithm divides the array in half, reducing the search space by half with each iteration. This halving process resembles a journey through a labyrinth, where each turn leads to a narrower path.</p>
 
-  <p>In mathematical terms, the time complexity of find_max_recursive can be expressed as <Katex>O(\log n)</Katex>, where <Katex>n</Katex> represents the size of the input array. This signifies that as the array grows in size, the number of recursive steps required grows very slowly, mirroring the gradual narrowing of pathways in the enchanted forest.
-  </p>
+  <p>In mathematical terms, the time complexity of find_max_recursive can be expressed as <Katex>O(\log n)</Katex>, where <Katex>n</Katex> represents the size of the input array. This means that as the array grows in size, the number of recursive steps required grows very slowly; in other words, as we take more and more steps, those steps become bigger and bigger. Because the steps become larger, the number of steps required over time decreases.</p> 
 
   <br>
 
@@ -155,7 +154,7 @@
   <pre>
       <code class="language-python">
 def largest_power_of_two(n):
-    result = 1
+    result = 1 # Constant time operation; we are just initializing the variable here.
     while result * 2 %= n:
         result *= 2
     return result

@@ -156,7 +156,9 @@
       </code>
     </pre>
       
-      <p>This function takes an input list and returns a sorted version of that list. Sorting algorithms like quicksort or merge sort achieve a time complexity of <Katex>O(n \log n)</Katex>, making them efficient for large datasets.</p>
+      <p>This function takes an input list and returns a sorted version of that list. Python's sorting algorithm, Timsort, has an average-case time complexity of <Katex>O(n \log n)</Katex>; hence the overall time complexity of this function is <Katex>O(n \log n)</Katex>.</p>
+      <br>
+      <p>Sorting algorithms like quicksort or merge sort achieve a time complexity of <Katex>O(n \log n)</Katex>, making them efficient for large datasets.</p>
       <p>As the input size increases, the runtime of these algorithms grows logarithmically with the size of the dataset. This means that doubling the input size results in a slightly more than doubling of the runtime, making them efficient choices for processing large datasets.</p>
       <br>
   <!-- <p style="text-align: center;">Great work! Click on the donut to go back to the home page!</p>
