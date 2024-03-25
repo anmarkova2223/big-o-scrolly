@@ -60,7 +60,7 @@
     { src: donutHypeOpen,label: donutTexts[3], top: 500, left: 35, width: 150 },
     { src: donutThinkLeft,label: donutTexts[4], top: 600, left: 35, width: 130 },
     { src: graphDonut,label: donutTexts[5], top: 700, left: 30, width: 190 },
-    { src: constantDonut,label: donutTexts[6], top: 800, left: 35, width: 190 },
+    { src: graphDonut,label: donutTexts[6], top: 800, left: 35, width: 190 },
     { src: donutThinkRight,label: donutTexts[7], top: 900, left: 60, width: 130 },
     { src: donutWave,label: donutTexts[8], top: 1000, left: 42, width: 150 },
   ];

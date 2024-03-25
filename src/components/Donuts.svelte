@@ -131,8 +131,7 @@
             linearDonuts, logDonuts, quasiDonuts, quadDonuts, expDonuts, factorialDonuts,
         ];
 
-        const updatedDonuts = updatedDonutsList[index];
-        updateDonuts(updatedDonuts);
+        dispatcher('donutsUpdated', { donuts: updatedDonutsList[index] });
     }
 
     let index = 0
