@@ -43,10 +43,10 @@
 
   let donutTexts = [
     "Explanation",
-    "The How",
-    "The How",
-    "The How",
-    "The How",
+    "The How: Step 1",
+    "The How: Step 2",
+    "The How: Step 3",
+    "The How: Step 4",
     "Graph & Table",
     "Time Complexities",
     "Practice",
@@ -57,10 +57,10 @@
     { src: donutWave, label: "Welcome!", top: 100, left: 35, width: 150 },
     { src: donutThinkRight, label: donutTexts[0], top: 200, left: 35, width: 130 },
     { src: donutHypeClosed, label: donutTexts[1],top: 300, left: 35, width: 150 },
-    { src: graphDonut, label: donutTexts[2],top: 400, left: 35, width: 180 },
-    { src: constantDonut,label: donutTexts[3], top: 500, left: 35, width: 180 },
-    { src: logDonut,label: donutTexts[4], top: 600, left: 35, width: 180 },
-    { src: linearDonut,label: donutTexts[5], top: 700, left: 35, width: 180 },
+    { src: donutWaveLeft, label: donutTexts[2],top: 400, left: 35, width: 150 },
+    { src: donutHypeOpen,label: donutTexts[3], top: 500, left: 35, width: 150 },
+    { src: donutThinkLeft,label: donutTexts[4], top: 600, left: 35, width: 130 },
+    { src: graphDonut,label: donutTexts[5], top: 700, left: 35, width: 180 },
     { src: nlognDonut,label: donutTexts[6], top: 800, left: 35, width: 180 },
     { src: quadraticDonut,label: donutTexts[7], top: 900, left: 35, width: 180 },
     { src: exponentialDonut,label: donutTexts[8], top: 1000, left: 35, width: 180 },
@@ -134,22 +134,20 @@
     <img class="donut" src={src} alt="Donut" style={`width: ${width}px`}/>
     {#if index === 1}
       {#if index === 1}
-        <div class="label_short" style={`left: 30px`}>{label}</div>
+        <div class="label_short" style={`left: 25px`}>{label}</div>
       {/if}
       <!-- <div class="label_short" style={`left: px`}>{label}</div> -->
     {:else}
-      {#if index === 2 || index === 3}
-        <div class="label_norm" style={`left: 43px`}>{label}</div>
-      {:else if index === 4 || index === 10}
+      {#if index === 2 || index === 3 || index === 4 || index == 5}
+        <div class="label_norm" style={`left: 20px`}>{label}</div>
+      {:else if  index === 10}
         <div class="label_norm" style={`left: 63px`}>{label}</div>
       {:else if index === 0}
         <div class="label_norm" style={`left: 49px`}>{label}</div>
-      {:else if index === 5}
-        <div class="label_norm" style={`left: 50px`}>{label}</div>
-        {:else if index === 6}
-        <div class="label_norm" style={`left: 70px`}>{label}</div>
+      {:else if index === 6}
+        <div class="label_norm" style={`left: 45px`}>{label}</div>
       {:else if index === 7}
-        <div class="label_norm" style={`left: 55px`}>{label}</div>
+        <div class="label_norm" style={`left: 30px`}>{label}</div>
       {:else if index === 8}
         <div class="label_norm" style={`left: 60px`}>{label}</div>
         {:else}
