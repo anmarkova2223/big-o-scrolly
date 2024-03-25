@@ -28,14 +28,10 @@
 
     let index = 0
     function prevQuestion() {
-        if (index > 0) {
-            index -= 1;
-        }
+        index = (index - 1 + donuts.length) % donuts.length;
     }
     function nextQuestion() {
-        if (index < 6) {
-            index += 1;
-        }
+        index = (index + 1) % donuts.length;
     }
 
 </script>
