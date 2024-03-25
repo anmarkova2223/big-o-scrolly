@@ -60,10 +60,10 @@
     { src: donutWaveLeft, label: donutTexts[2],top: 400, left: 35, width: 150 },
     { src: donutHypeOpen,label: donutTexts[3], top: 500, left: 35, width: 150 },
     { src: donutThinkLeft,label: donutTexts[4], top: 600, left: 35, width: 130 },
-    { src: graphDonut,label: donutTexts[5], top: 700, left: 35, width: 180 },
-    { src: nlognDonut,label: donutTexts[6], top: 800, left: 35, width: 180 },
-    { src: quadraticDonut,label: donutTexts[7], top: 900, left: 35, width: 180 },
-    { src: exponentialDonut,label: donutTexts[8], top: 1000, left: 35, width: 180 },
+    { src: graphDonut,label: donutTexts[5], top: 700, left: 30, width: 190 },
+    { src: nlognDonut,label: donutTexts[6], top: 800, left: 35, width: 190 },
+    { src: donutThinkRight,label: donutTexts[7], top: 900, left: 60, width: 130 },
+    { src: donutWave,label: donutTexts[8], top: 1000, left: 42, width: 150 },
     // { src: factorialDonut,label: donutTexts[9], top: 1100, left: 35, width: 180 },
     // { src: donutThinkRight,label: donutTexts[10], top: 1200, left: 35, width: 130 },
     // { src: donutWaveLeft,label: donutTexts[11], top: 1300, left: 35, width: 140 }
@@ -149,9 +149,9 @@
       {:else if index === 7}
         <div class="label_norm" style={`left: 30px`}>{label}</div>
       {:else if index === 8}
-        <div class="label_norm" style={`left: 60px`}>{label}</div>
+        <div class="label_norm" style={`left: 40px`}>{label}</div>
         {:else}
-        <div class="label_norm" style={`left: 55px`}>{label}</div>
+        <div class="label_norm" style={`left: 50px`}>{label}</div>
     {/if}
     {/if}
     <div class="box_container" class:appear={boxAppears[index]}>

@@ -53,7 +53,7 @@
     .buttons {
         display: flex;
         top: 20px;
-        width: 980px;
+        width: 880px;
         position: absolute;
         align-items: center;
         justify-content: space-between;
