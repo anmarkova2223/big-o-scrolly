@@ -35,7 +35,6 @@
   import logDonut from '../lib/log-donut.png';
   import nlognDonut from '../lib/nlogn-donut.png';
   import constantDonut from '../lib/constant-donut.png';
-    import { index } from 'd3';
 
   import Sidebar from './Sidebar.svelte';
   let sidebar_show = false;
@@ -61,12 +60,9 @@
     { src: donutHypeOpen,label: donutTexts[3], top: 500, left: 35, width: 150 },
     { src: donutThinkLeft,label: donutTexts[4], top: 600, left: 35, width: 130 },
     { src: graphDonut,label: donutTexts[5], top: 700, left: 30, width: 190 },
-    { src: nlognDonut,label: donutTexts[6], top: 800, left: 35, width: 190 },
+    { src: constantDonut,label: donutTexts[6], top: 800, left: 35, width: 190 },
     { src: donutThinkRight,label: donutTexts[7], top: 900, left: 60, width: 130 },
     { src: donutWave,label: donutTexts[8], top: 1000, left: 42, width: 150 },
-    // { src: factorialDonut,label: donutTexts[9], top: 1100, left: 35, width: 180 },
-    // { src: donutThinkRight,label: donutTexts[10], top: 1200, left: 35, width: 130 },
-    // { src: donutWaveLeft,label: donutTexts[11], top: 1300, left: 35, width: 140 }
   ];
 
 
